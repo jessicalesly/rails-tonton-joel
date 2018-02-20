@@ -40,3 +40,9 @@ class OrdersController < ApplicationController
   end
 
 end
+
+
+
+#   <%= link_to "Annuler", cancel_order_path(order) %>
+#   <%= link_to "Accepter", accept_order_path(order) %>
+#   <%= link_to "Refuser", refuse_order_path(order) %>
