@@ -7,11 +7,13 @@ class RumsController < ApplicationController
 
   # def new
   #   @rum = Rum.new()
+  #   authorize @rum
   # end
 
 
   # def create
   #   @rum = Rum.new(rum_params)
+  #   authorize @rum
   #   if @rum.save
   #     redirect_to rum_path(@rum)
   #   else
@@ -30,5 +32,6 @@ class RumsController < ApplicationController
   def rum_params
     params.require(:rum).permit(:name, :description, :quantity, :annecdote, :availability, :price)
   end
+#
 
 end

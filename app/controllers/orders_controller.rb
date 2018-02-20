@@ -1,9 +1,12 @@
 class OrdersController < ApplicationController
   def index
-    @orders = Order.all
+    @orders_purchases = policy_scope(Order).where(user: current_user)
+    @orders_sales = policy_scope(Order).where.not(user: current_user)
   end
+
   def create
     @order = Order.new(order_params)
+    authorize @order
     @order.rum = Rum.find(params[:rum_id])
     @order.user = current_user
     if @order.save
