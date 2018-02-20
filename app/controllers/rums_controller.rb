@@ -5,21 +5,21 @@ class RumsController < ApplicationController
     @rums = policy_scope(Rum).order(created_at: :desc)
   end
 
-  # def new
-  #   @rum = Rum.new()
-  #   authorize @rum
-  # end
+  def new
+    @rum = Rum.new()
+    authorize @rum
+  end
 
-
-  # def create
-  #   @rum = Rum.new(rum_params)
-  #   authorize @rum
-  #   if @rum.save
-  #     redirect_to rum_path(@rum)
-  #   else
-  #     render :new
-  #   end
-  # end
+  def create
+    @rum = Rum.new(rum_params)
+    @rum.user = current_user
+    authorize @rum
+    if @rum.save
+      redirect_to rum_path(@rum)
+    else
+      render :new
+    end
+  end
 
   def show
     @rum = Rum.find(params[:id])
@@ -30,7 +30,7 @@ class RumsController < ApplicationController
   private
 
   def rum_params
-    params.require(:rum).permit(:name, :description, :quantity, :annecdote, :availability, :price)
+    params.require(:rum).permit(:name, :description, :volume, :annecdote, :availability, :price)
   end
 #
 
