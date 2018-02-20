@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resources :orders, only: [:index, :update]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   devise_for :users
-  root 'rums#index'
+  root 'rums#index' #
 end
