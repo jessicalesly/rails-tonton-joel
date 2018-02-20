@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'pages#home'
+  root to: 'rums#index'
   resources :rums, only: [:index, :show, :new, :create, :edit, :update] do
     resources :orders, only: [:create]
   end
