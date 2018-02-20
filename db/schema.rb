@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20180219173548) do
 
   create_table "orders", force: :cascade do |t|
     t.string "quantity"
-    t.string "status"
+    t.string "status", default: "en attente"
     t.bigint "rum_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20180219173548) do
     t.text "description"
     t.text "anecdote"
     t.integer "price"
-    t.boolean "availability"
+    t.boolean "availability", default: true
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
