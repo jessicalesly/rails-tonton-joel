@@ -1,7 +1,7 @@
 /* Your banner CSS code here */
 /* Your banner CSS file */
 .banner-new {
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), asset-url('banner.jpeg');
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), asset-url('rum_banner_new.jpeg');
   background-size: cover;
   height: 100vh;
   display: flex;
@@ -12,11 +12,16 @@
 
 .banner-content-new {
   color: white;
-  text-align: center;
+  text-align: left;
   // padding: 80px 120px;
   // border: 2px solid #F4F4F4;
   a {
     color: white;
+  }
+
+  .btn {
+    // background-color: grey;
+    width: 100%;
   }
 }
 
