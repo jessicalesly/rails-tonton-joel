@@ -1,7 +1,7 @@
 class RumPolicy < ApplicationPolicy
   # [...]
 
-  def index?
+  def show?
     return true
   end
 

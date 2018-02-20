@@ -21,6 +21,7 @@ class RumsController < ApplicationController
 
   def show
     @rum = Rum.find(params[:id])
+    authorize @rum
   end
 
   private
