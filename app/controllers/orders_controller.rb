@@ -13,10 +13,36 @@ class OrdersController < ApplicationController
     end
   end
 
+  def cancel
+    update_status("annulé")
+  end
+
+  def refuse
+    update_status("refusé")
+  end
+
+  def accept
+    update_status("accepté")
+  end
+
   private
+
+  def update_status(new_status)
+    @order = Order.find(params[:id])
+    @order.status = new_status
+    @order.save!
+    authorize @order
+    redirect_to orders_path
+  end
 
   def order_params
     params.require(:order).permit(:quantity, :status)
   end
 
 end
+
+
+
+#   <%= link_to "Annuler", cancel_order_path(order) %>
+#   <%= link_to "Accepter", accept_order_path(order) %>
+#   <%= link_to "Refuser", refuse_order_path(order) %>
