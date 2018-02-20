@@ -1,7 +1,11 @@
 class OrdersController < ApplicationController
   def index
-    @orders_purchases = policy_scope(Order).where(user: current_user)
-    @orders_sales = policy_scope(Order).where.not(user: current_user)
+    @orders_purchases = policy_scope(Order).select do |order|
+      order.user == current_user
+    end
+    @orders_sales = policy_scope(Order).select do |order|
+      order.user != current_user
+    end
   end
 
   def create

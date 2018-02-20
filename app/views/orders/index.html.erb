@@ -27,7 +27,6 @@
 
       <% @orders_sales.each do |order|  %>
 
-      <% if order.status == "en attente" %>
 
         <div class="card">
             <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(<%= image_path "le_planteur.jpg" %>);">
@@ -42,9 +41,12 @@
             </div>
 
           <div class="card-footer">
-            <p class="card-date"></p>
-          <%= link_to "Accepter", accept_order_path(order), class: "accept-btn btn btn-success" %>
-          <%= link_to "Refuser", refuse_order_path(order), class: "refuse-btn btn btn-danger" %>
+            <p class="card-date">
+            <% if order.status == "en attente" %>
+
+            <%= link_to "Accepter", accept_order_path(order), class: "accept-btn btn btn-success" %>
+            <%= link_to "Refuser", refuse_order_path(order), class: "refuse-btn btn btn-danger" %>
+            </p>
           </div>
 
         </div>
