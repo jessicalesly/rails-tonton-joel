@@ -5,6 +5,14 @@ class RumPolicy < ApplicationPolicy
     return true
   end
 
+  def edit?
+    record.user == user
+  end
+
+  def update?
+    record.user == user
+  end
+
   def new?
     return true
   end

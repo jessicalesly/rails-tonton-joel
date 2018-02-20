@@ -1,19 +1,18 @@
-<h1><%=@rum.name%></h1>
 <div class="rum-card">
-
   <div class="rum-description-general">
     <%= image_tag "daiquiri.jpg", id: "rum-thumb"  %>
     <div class="rum-description-text">
       <p><strong><%= @rum.name %></strong></p>
       <p><strong>Description:</strong><%= @rum.description %></p>
-      <p><strong>Price:</strong><%= @rum.price %></p>
+      <p><strong>Annecdote:</strong><%= @rum.anecdote %>
+      <p><strong>Price:</strong><%= @rum.price %> € </p>
     </div>
   </div>
   <div class="purchase-module" >
-    <h2>Commander:</h2>
+    <h3>Commander:</h3>
     <%= simple_form_for [@rum, @order] do |f| %>
-    <%= f.input :quantity, placeholder: "Enter a number"  %>
-    <%= f.submit "Order", class: "btn btn-primary" %>
+      <%= f.input :quantity, placeholder: "Enter a number"  %>
+      <%= f.submit "Order", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
