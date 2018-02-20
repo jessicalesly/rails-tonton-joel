@@ -19,4 +19,6 @@ class OrdersController < ApplicationController
     params.require(:order).permit(:quantity, :status)
   end
 
+#
+
 end

@@ -30,5 +30,6 @@ class RumsController < ApplicationController
   def rum_params
     params.require(:rum).permit(:name, :description, :quantity, :annecdote, :availability, :price)
   end
+#
 
 end

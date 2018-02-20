@@ -10,4 +10,5 @@ class RumPolicy < ApplicationPolicy
       scope.all
     end
   end
+  #
 end
