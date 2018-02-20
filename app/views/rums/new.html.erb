@@ -1,0 +1,23 @@
+<div class="banner-new">
+  <div class="banner-content-new">
+    <h1>Add a new rum to sell</h1>
+    <%= simple_form_for [@rum] do |f| %>
+      <br>
+      <%= f.input :name, label: false, class:"form-group", placeholder: "Nom du cocktail" %>
+      <br>
+      <%= f.input :volume, class:"form-group", placeholder: "2L, 3 bouteilles, etc." %>
+      <br>
+      <%= f.input :price, label: false, class:"form-group", placeholder: "Prix en euros" %>
+      <br>
+      <%= f.input :description, label: false, class:"form-group", placeholder: "Coco, épices, etc." %>
+      <br>
+      <%= f.input :annecdote, label: false, class:"form-group", placeholder: "Blablabla" %>
+      <br>
+      <%= f.submit "Créer", class: "btn btn-primary" %>
+    <% end %>
+    <br>
+    <%= link_to "Revenir à la liste des rhums", rums_path %>
+    <!-- <a href="" class="btn-yours">Discover</a> -->
+  </div>
+</div>
+
