@@ -1,0 +1,7 @@
+<div class="container">
+  <h1>Ma liste de rhum</h1>
+    <%@rums.each do |rum|%>
+      <li><%= link_to rum.name, rum_path(rum)%></li>
+      <% end %>
+      <%= link_to 'Ajouter un rhum',new_rum_path , class: 'btn btn-primary' %>
+</div>
