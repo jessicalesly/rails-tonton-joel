@@ -1,5 +1,32 @@
-<h1>Hello</h1>
-<p><% @orders.each do |order| %>
-  <%= order.rum.user %>
-  <% end %>
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+      <% @orders.each do |order|  %>
+        <div class="card">
+            <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(<%= image_path "le_planteur.jpg" %>);">
+              <h2 class="card-category"><%= order.rum.name %></h2>
+              <p class="volume"><%= order.rum.volume %></p>
+              <div class="card-avatar">
+                <img src="images/profile_pic.jpg" alt="" class="avatar">
+              </div>
+              <div class="card-desc">
+                <h3><%= order.user.email %></h3>
+                <h3><%= order.rum.user.email %></h3>
+                <p class="quantity">Quantité achetée: <%= order.quantity %></p>
+              </div>
+              <%= link_to "", "", class: "card-link" %>
+              <%= link_to "Cancel order", orders_path, class: "cancel btn btn-danger" %>
+            </div>
+
+          <div class="card-footer">
+            <p class="card-date">Statut de la vente: <%= order.status %></p>
+          <%= link_to "PAY", "", class: "pay-btn btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+

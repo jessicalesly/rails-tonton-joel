@@ -28,6 +28,10 @@ class OrdersController < ApplicationController
     update_status("accepté")
   end
 
+  def pay
+    update_status("finalisé")
+  end
+
   private
 
   def update_status(new_status)
@@ -49,3 +53,4 @@ end
 #   <%= link_to "Annuler", cancel_order_path(order) %>
 #   <%= link_to "Accepter", accept_order_path(order) %>
 #   <%= link_to "Refuser", refuse_order_path(order) %>
+#   <%= link_to "Payer", pay_order_path(order) %>
