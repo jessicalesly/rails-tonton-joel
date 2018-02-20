@@ -19,7 +19,9 @@ class OrderPolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
+      scope1 = scope.all.where(user: user)
       scope2 = scope.joins(:rum).where(rums: {user_id: user})
+      scope = scope1 + scope2
     end
   end
   #
