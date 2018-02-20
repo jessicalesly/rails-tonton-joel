@@ -18,18 +18,30 @@ class OrdersController < ApplicationController
 
   def cancel
     update_status("annulé")
+    authorize @order
+    @order.save!
+    redirect_to orders_path
   end
 
   def refuse
     update_status("refusé")
+    authorize @order
+    @order.save!
+    redirect_to orders_path
   end
 
   def accept
     update_status("accepté")
+    authorize @order
+    @order.save!
+    redirect_to orders_path
   end
 
   def pay
     update_status("finalisé")
+    authorize @order
+    @order.save!
+    redirect_to orders_path
   end
 
   private
@@ -37,9 +49,6 @@ class OrdersController < ApplicationController
   def update_status(new_status)
     @order = Order.find(params[:id])
     @order.status = new_status
-    @order.save!
-    authorize @order
-    redirect_to orders_path
   end
 
   def order_params
@@ -47,10 +56,3 @@ class OrdersController < ApplicationController
   end
 
 end
-
-
-
-#   <%= link_to "Annuler", cancel_order_path(order) %>
-#   <%= link_to "Accepter", accept_order_path(order) %>
-#   <%= link_to "Refuser", refuse_order_path(order) %>
-#   <%= link_to "Payer", pay_order_path(order) %>
