@@ -31,7 +31,7 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.status = new_status
     @order.save!
-    # authorize @order
+    authorize @order
     redirect_to orders_path
   end
 
