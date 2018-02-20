@@ -13,9 +13,13 @@ class OrderPolicy < ApplicationPolicy
     return true
   end
 
+  def update_status?
+    return true
+  end
+
   class Scope < Scope
     def resolve
-      scope.all
+      scope2 = scope.joins(:rum).where(rums: {user_id: user})
     end
   end
   #
