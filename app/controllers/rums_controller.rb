@@ -2,16 +2,18 @@ class RumsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @rums = Rum.all
+    @rums = policy_scope(Rum).order(created_at: :desc)
   end
 
   # def new
   #   @rum = Rum.new()
+  #   authorize @rum
   # end
 
 
   # def create
   #   @rum = Rum.new(rum_params)
+  #   authorize @rum
   #   if @rum.save
   #     redirect_to rum_path(@rum)
   #   else
@@ -21,6 +23,8 @@ class RumsController < ApplicationController
 
   def show
     @rum = Rum.find(params[:id])
+    @order = Order.new
+    authorize @rum
   end
 
   private
@@ -28,5 +32,6 @@ class RumsController < ApplicationController
   def rum_params
     params.require(:rum).permit(:name, :description, :quantity, :annecdote, :availability, :price)
   end
+#
 
 end
