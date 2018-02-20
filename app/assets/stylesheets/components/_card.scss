@@ -70,7 +70,7 @@
 }
 .card-date {
   flex: 0 0 60%;
-  padding: 10px;
+  padding: 40px;
   margin: 0px;
   color: rgb(100,100,100);
 }
@@ -120,4 +120,18 @@
   z-index: 2;
   background: black;
   opacity: 0;
+}
+
+.accept-btn{
+  position: absolute;
+  left: 150px;
+  margin: 0px;
+  width: 150px;
+}
+
+.refuse-btn {
+  position: absolute;
+  right: 150px;
+  margin: 0px;
+  width: 150px;
 }

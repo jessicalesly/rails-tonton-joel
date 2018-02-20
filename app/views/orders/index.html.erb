@@ -1,18 +1,17 @@
+<h1>Hello</h1>
+
 <div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
 
-      <% @orders.each do |order|  %>
+      <% @orders_purchases.each do |order|  %>
         <div class="card">
             <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(<%= image_path "le_planteur.jpg" %>);">
               <h2 class="card-category"><%= order.rum.name %></h2>
               <p class="volume"><%= order.rum.volume %></p>
-              <div class="card-avatar">
-                <img src="images/profile_pic.jpg" alt="" class="avatar">
-              </div>
               <div class="card-desc">
-                <h3><%= order.user.email %></h3>
-                <h3><%= order.rum.user.email %></h3>
+                <h3>Acheteur: <%= order.user.email %></h3>
+                <h3>Vendeur: <%= order.rum.user.email %></h3>
                 <p class="quantity">Quantité achetée: <%= order.quantity %></p>
               </div>
               <%= link_to "", "", class: "card-link" %>
@@ -26,7 +25,119 @@
         </div>
       <% end %>
 
+      <% @orders_sales.each do |order|  %>
+
+      <% if order.status == "en attente" %>
+
+        <div class="card">
+            <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(<%= image_path "le_planteur.jpg" %>);">
+              <h2 class="card-category"><%= order.rum.name %></h2>
+              <p class="volume"><%= order.rum.volume %></p>
+              <div class="card-desc">
+                <h3>Acheteur: <%= order.user.email %></h3>
+                <h3>Vendeur: <%= order.rum.user.email %></h3>
+                <p class="quantity">Quantité achetée: <%= order.quantity %></p>
+              </div>
+              <%= link_to "", "", class: "card-link" %>
+            </div>
+
+          <div class="card-footer">
+            <p class="card-date"></p>
+          <%= link_to "Accepter", accept_order_path(order), class: "accept-btn btn btn-success" %>
+          <%= link_to "Refuser", refuse_order_path(order), class: "refuse-btn btn btn-danger" %>
+          </div>
+
+        </div>
+
+      <% elsif order.status == "accepté" %>
+
+        <div class="card">
+            <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(<%= image_path "le_planteur.jpg" %>);">
+              <h2 class="card-category"><%= order.rum.name %></h2>
+              <p class="volume"><%= order.rum.volume %></p>
+              <div class="card-desc">
+                <h3>Acheteur: <%= order.user.email %></h3>
+                <h3>Vendeur: <%= order.rum.user.email %></h3>
+                <p class="quantity">Quantité achetée: <%= order.quantity %></p>
+              </div>
+              <%= link_to "", "", class: "card-link" %>
+            </div>
+
+          <div class="card-footer">
+            <p class="card-date">En attente de paiement</p>
+          </div>
+
+        </div>
+
+      <% elsif order.status == "finalisé" %>
+
+        <div class="card">
+            <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(<%= image_path "le_planteur.jpg" %>);">
+              <h2 class="card-category"><%= order.rum.name %></h2>
+              <p class="volume"><%= order.rum.volume %></p>
+              <div class="card-desc">
+                <h3>Acheteur: <%= order.user.email %></h3>
+                <h3>Vendeur: <%= order.rum.user.email %></h3>
+                <p class="quantity">Quantité achetée: <%= order.quantity %></p>
+              </div>
+              <%= link_to "", "", class: "card-link" %>
+            </div>
+
+          <div class="card-footer">
+            <p class="card-date">Produit payé</p>
+          </div>
+
+        </div>
+
+      <% elsif order.status == "annulé" %>
+
+        <div class="card">
+            <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(<%= image_path "le_planteur.jpg" %>);">
+              <h2 class="card-category"><%= order.rum.name %></h2>
+              <p class="volume"><%= order.rum.volume %></p>
+              <div class="card-desc">
+                <h3>Acheteur: <%= order.user.email %></h3>
+                <h3>Vendeur: <%= order.rum.user.email %></h3>
+                <p class="quantity">Quantité achetée: <%= order.quantity %></p>
+              </div>
+              <%= link_to "", "", class: "card-link" %>
+            </div>
+
+          <div class="card-footer">
+            <p class="card-date">Annulé par le client</p>
+          </div>
+
+        </div>
+
+        <% else %>
+
+        <div class="card">
+            <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(<%= image_path "le_planteur.jpg" %>);">
+              <h2 class="card-category"><%= order.rum.name %></h2>
+              <p class="volume"><%= order.rum.volume %></p>
+              <div class="card-desc">
+                <h3>Acheteur: <%= order.user.email %></h3>
+                <h3>Vendeur: <%= order.rum.user.email %></h3>
+                <p class="quantity">Quantité achetée: <%= order.quantity %></p>
+              </div>
+              <%= link_to "", "", class: "card-link" %>
+            </div>
+
+          <div class="card-footer">
+            <p class="card-date">Vente refusée</p>
+          </div>
+
+        </div>
+
+      <% end %>
+
+      <% end %>
+
     </div>
   </div>
 </div>
 
+<%#= link_to "Annuler", cancel_order_path(order) %>
+<%#= link_to "Accepter", accept_order_path(order) %>
+<%#= link_to "Refuser", refuse_order_path(order) %>
+<%#= link_to "Payer", pay_order_path(order) %>

@@ -13,7 +13,19 @@ class OrderPolicy < ApplicationPolicy
     return true
   end
 
-  def update_status?
+  def accept?
+    return true
+  end
+
+  def refuse?
+    return true
+  end
+
+  def cancel?
+    return true
+  end
+
+  def pay?
     return true
   end
 
