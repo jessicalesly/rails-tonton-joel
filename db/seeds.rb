@@ -6,23 +6,23 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.last)
 
-rum1 = Rum.new(name: "Le planteur", price: 10)
+rum1 = Rum.new(name: "Le planteur", price: 10, volume: "1 bouteille")
 rum1.user = User.first
 rum1.save!
 
-rum2 = Rum.new(name: "Le punch classique", price: 11)
+rum2 = Rum.new(name: "Le punch classique", price: 11, volume: "2 bouteilles")
 rum2.user = User.first
 rum2.save!
 
-rum3 = Rum.new(name: "Le ti'punch", price: 12)
+rum3 = Rum.new(name: "Le ti'punch", price: 12, volume: "3 bouteilles")
 rum3.user = User.first
 rum3.save!
 
-rum4 = Rum.new(name: "Le cuba libre", price: 13)
+rum4 = Rum.new(name: "Le cuba libre", price: 13, volume: "4 bouteilles")
 rum4.user = User.first
 rum4.save!
 
-rum5 = Rum.new(name: "Le daiquiri", price: 14)
+rum5 = Rum.new(name: "Le daiquiri", price: 14, volume: "5 bouteilles")
 rum5.user = User.first
 rum5.save!
 
