@@ -37,27 +37,21 @@ li {
   margin-left: -20px;
 }
 
-i {
-  color : #2AF598;
-  font-weight: lighter;
-  font-size: 20px;
-  padding: 10px;
-  margin-right: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #2AF598;
-  border-spacing: 5px;
-  border-radius: 5px;
-&:hover {
-  opacity : 0.5;
-  }
-}
-
-
 .descriptiontext {
   display: flex;
   flex-direction : column;
   height: 376px;
   justify-content: center;
+  i {
+    color : #2AF598;
+    font-size: 20px;
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #2AF598;
+    border-spacing: 5px;
+    border-radius: 5px;
+  }
 }
 
 // Wrapper Cards
