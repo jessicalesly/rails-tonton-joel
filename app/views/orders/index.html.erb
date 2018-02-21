@@ -86,10 +86,8 @@
       <% else %>
 
         <% @orders_sales.each do |order|  %>
-      <div class="col-md-6">
-
-
-          <div class="card-order">
+          <div class="col-md-6">
+            <div class="card-order">
               <div class="card-body-order" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url(<%= image_path "ti_punch.jpg" %>);">
                 <h2 class="card-category-order"><%= order.rum.name.capitalize %></h2>
                 <h4 class="volume">Volume: <%= order.rum.volume %></h4>
@@ -121,17 +119,13 @@
                   <h4 class="card-message-order">Annulé par le client</h4>
 
                 <% else %>
-
                   <h4 class="card-message-order">Vente refusée</h4>
-
                 <% end %>
+              </div>
             </div>
-
           </div>
-          <% end %>
-
-      </div>
         <% end %>
+      <% end %>
     </div>
   </div>
 </div>
