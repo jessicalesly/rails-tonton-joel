@@ -41,97 +41,32 @@
             </div>
 
           <div class="card-footer">
-            <p class="card-date">
+
             <% if order.status == "en attente" %>
 
-            <%= link_to "Accepter", accept_order_path(order), class: "accept-btn btn btn-success" %>
-            <%= link_to "Refuser", refuse_order_path(order), class: "refuse-btn btn btn-danger" %>
-            </p>
+              <%= link_to "Accepter", accept_order_path(order), class: "accept-btn btn btn-success" %>
+              <%= link_to "Refuser", refuse_order_path(order), class: "refuse-btn btn btn-danger" %>
+
+            <% elsif order.status == "accepté" %>
+
+                <p class="card-message">En attente de paiement</p>
+
+              <% elsif order.status == "finalisé" %>
+
+                <p class="card-message">Produit payé</p>
+
+              <% elsif order.status == "annulé" %>
+
+                <p class="card-message">Annulé par le client</p>
+
+              <% else %>
+
+                <p class="card-message">Vente refusée</p>
+
+              <% end %>
           </div>
 
         </div>
-
-      <% elsif order.status == "accepté" %>
-
-        <div class="card">
-            <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(<%= image_path "le_planteur.jpg" %>);">
-              <h2 class="card-category"><%= order.rum.name %></h2>
-              <p class="volume"><%= order.rum.volume %></p>
-              <div class="card-desc">
-                <h3>Acheteur: <%= order.user.email %></h3>
-                <h3>Vendeur: <%= order.rum.user.email %></h3>
-                <p class="quantity">Quantité achetée: <%= order.quantity %></p>
-              </div>
-              <%= link_to "", "", class: "card-link" %>
-            </div>
-
-          <div class="card-footer">
-            <p class="card-date">En attente de paiement</p>
-          </div>
-
-        </div>
-
-      <% elsif order.status == "finalisé" %>
-
-        <div class="card">
-            <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(<%= image_path "le_planteur.jpg" %>);">
-              <h2 class="card-category"><%= order.rum.name %></h2>
-              <p class="volume"><%= order.rum.volume %></p>
-              <div class="card-desc">
-                <h3>Acheteur: <%= order.user.email %></h3>
-                <h3>Vendeur: <%= order.rum.user.email %></h3>
-                <p class="quantity">Quantité achetée: <%= order.quantity %></p>
-              </div>
-              <%= link_to "", "", class: "card-link" %>
-            </div>
-
-          <div class="card-footer">
-            <p class="card-date">Produit payé</p>
-          </div>
-
-        </div>
-
-      <% elsif order.status == "annulé" %>
-
-        <div class="card">
-            <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(<%= image_path "le_planteur.jpg" %>);">
-              <h2 class="card-category"><%= order.rum.name %></h2>
-              <p class="volume"><%= order.rum.volume %></p>
-              <div class="card-desc">
-                <h3>Acheteur: <%= order.user.email %></h3>
-                <h3>Vendeur: <%= order.rum.user.email %></h3>
-                <p class="quantity">Quantité achetée: <%= order.quantity %></p>
-              </div>
-              <%= link_to "", "", class: "card-link" %>
-            </div>
-
-          <div class="card-footer">
-            <p class="card-date">Annulé par le client</p>
-          </div>
-
-        </div>
-
-        <% else %>
-
-        <div class="card">
-            <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(<%= image_path "le_planteur.jpg" %>);">
-              <h2 class="card-category"><%= order.rum.name %></h2>
-              <p class="volume"><%= order.rum.volume %></p>
-              <div class="card-desc">
-                <h3>Acheteur: <%= order.user.email %></h3>
-                <h3>Vendeur: <%= order.rum.user.email %></h3>
-                <p class="quantity">Quantité achetée: <%= order.quantity %></p>
-              </div>
-              <%= link_to "", "", class: "card-link" %>
-            </div>
-
-          <div class="card-footer">
-            <p class="card-date">Vente refusée</p>
-          </div>
-
-        </div>
-
-      <% end %>
 
       <% end %>
 

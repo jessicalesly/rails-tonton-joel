@@ -62,18 +62,16 @@
   align-items: center;
   justify-content: space-between;
   background-color: white;
+  padding: 30px;
+  margin: 0px;
+  color: rgb(100,100,100);
 }
 .card:hover {
   /*box-shadow: 2px 2px 2px 2px black;*/
   box-shadow: 0.5em 0.5em .4em grey;
   /*margin-top: -5px;*/
 }
-.card-date {
-  flex: 0 0 60%;
-  padding: 40px;
-  margin: 0px;
-  color: rgb(100,100,100);
-}
+
 /*.cards {
   display: flex;
   justify-content: space-around;
@@ -82,6 +80,7 @@
 /*.card-picture:hover .card-hover {
   opacity: 1;
 }*/
+
 .wrapper-cards {
   background-color: #F4F4F4;
   padding: 90px;
@@ -134,4 +133,8 @@
   right: 150px;
   margin: 0px;
   width: 150px;
+}
+
+.card-message {
+  position: absolute;
 }
