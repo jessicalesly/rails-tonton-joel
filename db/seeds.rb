@@ -16,7 +16,7 @@ rum1 = Rum.new(name: "Le planteur", price: 10, volume: "1 bouteille")
 rum1.user = User.first
 rum1.save!
 
-rum2 = Rum.new(name: "Le punch classique", price: 11, volume: "2 bouteilles")
+rum2 = Rum.new(name: "Le punch", price: 11, volume: "2 bouteilles")
 rum2.user = User.first
 rum2.save!
 

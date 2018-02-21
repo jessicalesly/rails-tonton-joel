@@ -60,6 +60,7 @@
 }
 .card-footer-order {
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: space-between;
   background-color: #e8eef5;
@@ -126,16 +127,19 @@
 
 .accept-btn{
   position: absolute;
-  left: 150px;
-  margin: 0px;
+  left: 85px;
   width: 150px;
 }
 
 .refuse-btn {
   position: absolute;
-  right: 150px;
-  margin: 0px;
+  right: 85px;
   width: 150px;
+}
+
+.card-order-nothing {
+  display: flex;
+  justify-content: center;
 }
 
 // .card-message-order {
