@@ -1,1 +1,104 @@
 // Specific CSS for your home-page
+
+// Font and color text
+h3 {
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight:lighter;
+}
+
+//  Wrapper Description Tonton Joel
+
+.wrapper {
+  background-color: #ffff;
+}
+
+.mycontainer {
+  margin-left: -90px;
+}
+
+.fruit {
+  height: 400px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  margin-left: -20px;
+}
+
+i {
+  color : #2AF598;
+  font-weight: lighter;
+  font-size: 20px;
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #2AF598;
+  border-spacing: 5px;
+  border-radius: 5px;
+&:hover {
+  opacity : 0.5;
+  }
+}
+
+
+.descriptiontext {
+  display: flex;
+  flex-direction : column;
+  height: 376px;
+  justify-content: center;
+}
+
+// Wrapper Cards
+
+.wrappercards {
+background-color: #08AEEA;
+background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 39%);
+}
+
+.wrappercardstitle {
+  margin-top: 0;
+  text-align: center;
+  color: white;
+  font-weight: 400;
+}
+
+// Wrapper add rum
+
+.small_banner {
+  height: 700px !important;
+  background-position: bottom;
+}
+
+.legitimus {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.contentaddlink {
+
+}
+.contentaddlink h3 {
+  color: white;
+  font-weight:400;
+}
+
+.contentaddlink p{
+  color: white;
+  font-size: 17px;
+}
+

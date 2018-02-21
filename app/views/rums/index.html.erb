@@ -1,7 +1,64 @@
-<div class="container">
-  <h1>Ma liste de rhum</h1>
-    <%@rums.each do |rum|%>
-      <li><%= link_to rum.name, rum_path(rum)%></li>
-      <% end %>
-      <%= link_to 'Ajouter un rhum',new_rum_path , class: 'btn btn-primary' %>
+<!-- Banner -->
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path('cocktail.jpg') %>');">
+  <div class="banner-content">
+    <h1>Tonton Joël</h1>
+    <p>
+      <span id="banner-typed-text"></span>
+    </p>
+    <a class="btn btn-success btn-lg">Découvrez nos douceurs</a>
+  </div>
 </div>
+
+<!--  Wrapper description tonton joel -->
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="mycontainer">
+        <div class="col-xs-6 col-md-4 col-md-offset-2">
+          <div class="descriptiontext">
+          <h3>Tonton Joël c'est </h3><!-- JS animation to add on title -->
+          <ul>
+            <li><i class="fas fa-search"></i>Du rhum à gogo</li>
+            <li><i class="far fa-envelope"></i>Contact facilement un Joël</li>
+            <li><i class="fas fa-shopping-cart"></i> Achete facilement ton rhum </li>
+          </ul>
+        </div>
+      </div>
+      </div>
+      <div class="col-xs-6 col-md-6">
+        <img class="fruit" src="<%=image_path('fruits.png')%>">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cards Rum List -->
+<div class="wrappercards">
+  <h3 class="wrappercardstitle" id= "ancrelist">Quelques douceurs</h3>
+  <div class="container">
+    <div class="row">
+      <% @rums.each do |rum|%>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/1600x900/?cocktail');">
+          <div class="card-description">
+            <p><%= link_to rum.name, rum_path(rum) %></p>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+ <!-- Link to add a new rum -->
+ <div class="banner small_banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path('pinacolada.jpg') %>');">
+  <div class="contentaddlink">
+    <h3>Envie de devenir un futur Joël</h3>
+      <img class="legitimus", src="<%=image_path('pascal.jpg')%>">
+        <p><em>Si tu l'âmes d'un rhumier et que tu souhaites surprendre notre communauté par tes rhums arrangés.<br> N'hésite plus et ajoute tes rhums</em></p>
+         <%= link_to 'Ajoute ton rhum',new_rum_path , class: 'btn btn-primary' %>
+  </div>
+</div>
+
+
+
