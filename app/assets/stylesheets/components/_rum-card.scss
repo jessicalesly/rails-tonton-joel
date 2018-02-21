@@ -4,6 +4,7 @@
 }
 
 .rum-description-general {
+
   display: flex;
   justify-content: start;
   align-items: center;
@@ -16,13 +17,45 @@
 }
 
 .rum-description-text {
+  margin-left: 20px;
   display: block;
   align-items: start;
 }
 
 .purchase-module {
-  padding: 20px;
+  padding: 5px;
   display: block;
+  width: 30vw;
+  align-items: start;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
 }
 
+.vendor-module {
+  padding: 5px;
+  display: flex;
+  width: 30vw;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
 
+h3 {
+  margin-top: 0px;
+}
+
+#order_quantity {
+  font-size: 12px;
+  height: 30px;
+}
+
+#new_order > .btn.btn-primary {
+  background-color: #32B796;
+  border-color: #2da386;
+}
+
+#new_order > .btn.btn-primary:hover {
+  background-color: #278f75;
+  border-color: #1f735e;
+}
