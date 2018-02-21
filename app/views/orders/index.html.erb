@@ -15,12 +15,14 @@
                 <p class="quantity">Quantité achetée: <%= order.quantity %></p>
               </div>
               <%= link_to "", "", class: "card-link" %>
-              <%= link_to "Cancel order", orders_path, class: "cancel btn btn-danger" %>
+              <%= link_to "Annuler la commande", cancel_order_path(order), class: "cancel btn btn-danger" %>
             </div>
 
           <div class="card-footer">
-            <p class="card-date">Statut de la vente: <%= order.status %></p>
-          <%= link_to "PAY", "", class: "pay-btn btn btn-primary" %>
+            <% if order.status == "accepté" %>
+              <p class="card-message">Statut de la vente: <%= order.status %></p>
+              <%= link_to "Payer", pay_order_path(order), class: "pay-btn btn btn-primary" %>
+            <% end %>
           </div>
         </div>
       <% end %>
