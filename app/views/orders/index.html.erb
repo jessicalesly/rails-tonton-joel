@@ -5,42 +5,42 @@
     <div class="col-md-8 col-md-offset-2">
 
       <% @orders_purchases.each do |order|  %>
-        <div class="card">
-            <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(<%= image_path "le_planteur.jpg" %>);">
-              <h2 class="card-category"><%= order.rum.name %></h2>
+        <div class="card-order">
+            <div class="card-body-order" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(<%= image_path "le_planteur.jpg" %>);">
+              <h2 class="card-category-order"><%= order.rum.name %></h2>
               <p class="volume"><%= order.rum.volume %></p>
-              <div class="card-desc">
+              <div class="card-desc-order">
                 <h3>Acheteur: <%= order.user.email %></h3>
                 <h3>Vendeur: <%= order.rum.user.email %></h3>
                 <p class="quantity">Quantité achetée: <%= order.quantity %></p>
               </div>
-              <%= link_to "", "", class: "card-link" %>
+              <%= link_to "", "", class: "card-link-order" %>
               <% if order.status == "en attente" || order.status == "accepté" %>
                 <%= link_to "Annuler la commande", cancel_order_path(order), class: "cancel btn btn-danger" %>
               <% end %>
             </div>
 
-          <div class="card-footer">
+          <div class="card-footer-order">
             <% if order.status == "en attente" %>
 
-              <p class="card-message">Statut de la vente: <%= order.status %></p>
+              <p class="card-message-order">Statut de la vente: <%= order.status %></p>
 
             <% elsif order.status == "accepté" %>
 
-              <p class="card-message">Statut de la vente: <%= order.status %></p>
+              <p class="card-message-order">Statut de la vente: <%= order.status %></p>
               <%= link_to "Payer", pay_order_path(order), class: "pay-btn btn btn-primary" %>
 
             <% elsif order.status == "finalisé" %>
 
-            <p class="card-message">Statut de la vente: <%= order.status %></p>
+            <p class="card-message-order">Statut de la vente: <%= order.status %></p>
 
             <% elsif order.status == "annulé" %>
 
-            <p class="card-message">Statut de la vente: <%= order.status %></p>
+            <p class="card-message-order">Statut de la vente: <%= order.status %></p>
 
             <% else %>
 
-            <p class="card-message">Statut de la vente: <%= order.status %></p>
+            <p class="card-message-order">Statut de la vente: <%= order.status %></p>
 
             <% end %>
           </div>
@@ -50,19 +50,19 @@
       <% @orders_sales.each do |order|  %>
 
 
-        <div class="card">
-            <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(<%= image_path "le_planteur.jpg" %>);">
-              <h2 class="card-category"><%= order.rum.name %></h2>
+        <div class="card-order">
+            <div class="card-body-order" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(<%= image_path "le_planteur.jpg" %>);">
+              <h2 class="card-category-order"><%= order.rum.name %></h2>
               <p class="volume"><%= order.rum.volume %></p>
-              <div class="card-desc">
+              <div class="card-desc-order">
                 <h3>Acheteur: <%= order.user.email %></h3>
                 <h3>Vendeur: <%= order.rum.user.email %></h3>
                 <p class="quantity">Quantité achetée: <%= order.quantity %></p>
               </div>
-              <%= link_to "", "", class: "card-link" %>
+              <%= link_to "", "", class: "card-link-order" %>
             </div>
 
-          <div class="card-footer">
+          <div class="card-footer-order">
 
             <% if order.status == "en attente" %>
 
@@ -71,19 +71,19 @@
 
             <% elsif order.status == "accepté" %>
 
-                <p class="card-message">En attente de paiement</p>
+                <p class="card-message-order">En attente de paiement</p>
 
               <% elsif order.status == "finalisé" %>
 
-                <p class="card-message">Produit payé</p>
+                <p class="card-message-order">Produit payé</p>
 
               <% elsif order.status == "annulé" %>
 
-                <p class="card-message">Annulé par le client</p>
+                <p class="card-message-order">Annulé par le client</p>
 
               <% else %>
 
-                <p class="card-message">Vente refusée</p>
+                <p class="card-message-order">Vente refusée</p>
 
               <% end %>
           </div>
