@@ -1,0 +1,37 @@
+/* Your tabs CSS code here */
+.tabs {
+  display: flex;
+  align-items: center;
+}
+
+.tabs:hover{
+  a {
+    text-decoration: none;
+  }
+}
+
+.tab.active {
+  color: white;
+  background-color: #bbcce2;
+}
+
+.tab {
+  flex: 0 0 50%;
+  background-color: #F4F4F4;
+  color: #0c2240;
+}
+
+.tab:hover {
+  background-color: #e8eef5;
+}
+
+.tab.active:hover {
+  background-color: #bbcce2;
+}
+
+.tab:first-child {
+  border-radius: 5px 0 0 0; /* clockwise starting top-left*/
+}
+.tab:last-child {
+  border-radius: 0 5px 0 0; /* clockwise starting top-left*/
+}

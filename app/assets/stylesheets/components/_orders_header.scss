@@ -1,0 +1,31 @@
+/* Your profile header CSS code here */
+#container-center {
+  text-align: center;
+}
+
+.profile-header-wrapper {
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), asset-url('beach.jpeg');
+  background-size: cover;
+}
+
+.profile-header-infos {
+  padding: 15px;
+  color: white;
+}
+
+.profile-header-infos {
+  padding: 15px;
+  color: white;
+}
+
+.wrapper-purchases {
+  background-color: #bbcce2;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+.wrapper-sales {
+  background-color: #bbcce2;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
