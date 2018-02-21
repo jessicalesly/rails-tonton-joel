@@ -6,6 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.last)
 
+user1 = User.new(username: "ClemSimons", email: "clement@gmail.com", password: "123456")
+user1.save!
+
+user2 = User.new(username: "jessicalesly", email: "jessica@gmail.com", password: "123456")
+user2.save!
+
 rum1 = Rum.new(name: "Le planteur", price: 10, volume: "1 bouteille")
 rum1.user = User.first
 rum1.save!
@@ -28,25 +34,25 @@ rum5.save!
 
 order1 = Order.new(quantity: 1)
 order1.user = User.last
-order1.rum = Rum.find(1)
+order1.rum = rum1
 order1.save!
 
 order2 = Order.new(quantity: 2)
 order2.user = User.last
-order2.rum = Rum.find(2)
+order2.rum = rum2
 order2.save!
 
 order3 = Order.new(quantity: 3)
 order3.user = User.last
-order3.rum = Rum.find(3)
+order3.rum = rum3
 order3.save!
 
 order4 = Order.new(quantity: 4)
 order4.user = User.last
-order4.rum = Rum.find(4)
+order4.rum = rum4
 order4.save!
 
 order5 = Order.new(quantity: 5)
 order5.user = User.last
-order5.rum = Rum.find(5)
+order5.rum = rum5
 order5.save!
