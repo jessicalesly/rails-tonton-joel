@@ -1,20 +1,43 @@
-<h1>Hello</h1>
+<div class="profile-header-wrapper">
+  <div class="container" id="container-center">
+    <!-- Avatar and username -->
+    <div class="profile-header-infos">
+      <img src="https://kitt.lewagon.com/placeholder/users/jessicalesly" alt="" class="avatar">
+      <h1> Mon dashboard </h1>
+      <h2> <%= current_user.username.capitalize %> </h2>
+    </div>
 
-<div class="container">
+    <!-- Insert your <div class="tabs"> here -->
+    <div class="tabs">
+      <a id="tab_left" class="tab active" href="#">
+        <h3>Mes commandes</h3>
+        <h4><%= @orders_purchases.count %> en cours</h4>
+      </a>
+      <a id="tab_right" class="tab" href="#">
+        <h3>Mes ventes</h3>
+        <h4><%= @orders_sales.count %> en cours </h4>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<div class="wrapper-purchases">
+<div class="container" id="div_left">
   <div class="row">
-    <div class="col-md-8 col-md-offset-2">
 
       <% @orders_purchases.each do |order|  %>
+    <div class="col-md-6">
         <div class="card-order">
-            <div class="card-body-order" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(<%= image_path "le_planteur.jpg" %>);">
-              <h2 class="card-category-order"><%= order.rum.name %></h2>
-              <p class="volume"><%= order.rum.volume %></p>
+            <div class="card-body-order" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url(<%= image_path "pinacolada.jpg" %>);">
+              <h2 class="card-category-order"><%= order.rum.name.capitalize %></h2>
+              <h4 class="volume">Volume: <%= order.rum.volume %></h4>
               <div class="card-desc-order">
-                <h3>Acheteur: <%= order.user.email %></h3>
-                <h3>Vendeur: <%= order.rum.user.email %></h3>
+                <h4>Acheteur: <%= order.user.username %></h4>
+                <h4>Vendeur: <%= order.rum.user.username %></h4>
                 <p class="quantity">Quantité achetée: <%= order.quantity %></p>
               </div>
-              <%= link_to "", "", class: "card-link-order" %>
+              <%#= link_to "", "", class: "card-link-order" %>
               <% if order.status == "en attente" || order.status == "accepté" %>
                 <%= link_to "Annuler la commande", cancel_order_path(order), class: "cancel btn btn-danger" %>
               <% end %>
@@ -23,75 +46,84 @@
           <div class="card-footer-order">
             <% if order.status == "en attente" %>
 
-              <p class="card-message-order">Statut de la vente: <%= order.status %></p>
+              <h4 class="card-message-order">Statut de la vente: <%= order.status.capitalize %></h4>
 
             <% elsif order.status == "accepté" %>
 
-              <p class="card-message-order">Statut de la vente: <%= order.status %></p>
+              <h4 class="card-message-order">Statut de la vente: <%= order.status.capitalize %></h4>
               <%= link_to "Payer", pay_order_path(order), class: "pay-btn btn btn-primary" %>
 
             <% elsif order.status == "finalisé" %>
 
-            <p class="card-message-order">Statut de la vente: <%= order.status %></p>
+            <h4 class="card-message-order">Statut de la vente: <%= order.status.capitalize %></h4>
 
             <% elsif order.status == "annulé" %>
 
-            <p class="card-message-order">Statut de la vente: <%= order.status %></p>
+            <h4 class="card-message-order">Statut de la vente: <%= order.status.capitalize %></h4>
 
             <% else %>
 
-            <p class="card-message-order">Statut de la vente: <%= order.status %></p>
+            <h4 class="card-message-order">Statut de la vente: <%= order.status.capitalize %></h4>
 
             <% end %>
           </div>
         </div>
+</div>
       <% end %>
+</div>
+</div>
+</div>
 
-      <% @orders_sales.each do |order|  %>
+<div class="wrapper-sales">
+  <div class="container" id="div_right">
+    <div class="row">
+
+        <% @orders_sales.each do |order|  %>
+      <div class="col-md-6">
 
 
-        <div class="card-order">
-            <div class="card-body-order" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(<%= image_path "le_planteur.jpg" %>);">
-              <h2 class="card-category-order"><%= order.rum.name %></h2>
-              <p class="volume"><%= order.rum.volume %></p>
-              <div class="card-desc-order">
-                <h3>Acheteur: <%= order.user.email %></h3>
-                <h3>Vendeur: <%= order.rum.user.email %></h3>
-                <p class="quantity">Quantité achetée: <%= order.quantity %></p>
+          <div class="card-order">
+              <div class="card-body-order" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url(<%= image_path "ti_punch.jpg" %>);">
+                <h2 class="card-category-order"><%= order.rum.name.capitalize %></h2>
+                <h4 class="volume">Volume: <%= order.rum.volume %></h4>
+                <div class="card-desc-order">
+                  <h4>Acheteur: <%= order.user.username.capitalize %></h4>
+                  <h4>Vendeur: <%= order.rum.user.username.capitalize %></h4>
+                  <p class="quantity">Quantité achetée: <%= order.quantity %></p>
+                </div>
+                <%= link_to "", "", class: "card-link-order" %>
               </div>
-              <%= link_to "", "", class: "card-link-order" %>
+
+            <div class="card-footer-order">
+
+              <% if order.status == "en attente" %>
+
+                <%= link_to "Accepter", accept_order_path(order), class: "accept-btn btn btn-success" %>
+                <%= link_to "Refuser", refuse_order_path(order), class: "refuse-btn btn btn-danger" %>
+
+              <% elsif order.status == "accepté" %>
+
+                  <h4 class="card-message-order">En attente de paiement</h4>
+
+                <% elsif order.status == "finalisé" %>
+
+                  <h4 class="card-message-order">Produit payé</h4>
+
+                <% elsif order.status == "annulé" %>
+
+                  <h4 class="card-message-order">Annulé par le client</h4>
+
+                <% else %>
+
+                  <h4 class="card-message-order">Vente refusée</h4>
+
+                <% end %>
             </div>
 
-          <div class="card-footer-order">
-
-            <% if order.status == "en attente" %>
-
-              <%= link_to "Accepter", accept_order_path(order), class: "accept-btn btn btn-success" %>
-              <%= link_to "Refuser", refuse_order_path(order), class: "refuse-btn btn btn-danger" %>
-
-            <% elsif order.status == "accepté" %>
-
-                <p class="card-message-order">En attente de paiement</p>
-
-              <% elsif order.status == "finalisé" %>
-
-                <p class="card-message-order">Produit payé</p>
-
-              <% elsif order.status == "annulé" %>
-
-                <p class="card-message-order">Annulé par le client</p>
-
-              <% else %>
-
-                <p class="card-message-order">Vente refusée</p>
-
-              <% end %>
           </div>
 
-        </div>
-
-      <% end %>
-
+      </div>
+        <% end %>
     </div>
   </div>
 </div>
