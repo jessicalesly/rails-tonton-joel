@@ -1,0 +1,37 @@
+.background_sign_up {
+  background:#ECFAFB;
+  background-image: url(/assets/coconut.png);
+  background-size: 400px;
+  background-repeat: no-repeat;
+  background-position: right;
+
+
+}
+
+.form_signup {
+  height: 100vh;
+  width: 400px;
+  margin: auto;
+  align-items: center;
+}
+
+input {
+  font-weight: lighter;
+}
+
+.submit_button {
+  background: #2DCA90;
+  margin: auto;
+  color: white;
+  border: none;
+  margin-left: 130px;
+}
+
+.titre_signup {
+  text-align: center;
+  font-weight: 400;
+}
+
+label {
+  font-weight: 400;
+}

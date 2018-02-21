@@ -1,6 +1,6 @@
 <div class="banner-new">
   <div class="banner-content-new">
-    <h1>Ajouter un rhum à vendre</h1>
+    <h1>Modifie ton rhum</h1>
     <%= simple_form_for [@rum] do |f| %>
       <br>
       <%= f.input :name, label: "Nom du cocktail", class:"form-group", placeholder: "Nom du cocktail" %>
@@ -15,12 +15,12 @@
       <br>
       <%= f.input :availability, collection: [true,false], label: "Disponibilité", class:"form-group", placeholder: "Blablabla" %>
       <br>
-      <%= f.submit "Mettre à jour", class: "btn btn-primary" %>
+      <%= f.submit "C'est pawti", class: "btn btn-primary" %>
     <% end %>
     <br>
-    <%= link_to "Revenir à la page du rhum", rum_path(@rum) %>
+    <%= link_to "Revenir à la page du rhum", rum_path(@rum), class:"link_style" %>
     <br>
-    <%= link_to "Revenir à la liste des rhums", rums_path %>
+    <%= link_to "Revenir à l'acceuil", rums_path, class: "link_style home_spe" %>
     <!-- <a href="" class="btn-yours">Discover</a> -->
   </div>
 </div>
