@@ -3,7 +3,7 @@
 .banner-new {
   background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), asset-url('beach.jpeg');
   background-size: cover;
-  height: 100vh;
+  // height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -12,7 +12,9 @@
 
 .banner-content-new {
   color: white;
+  // height: 100vh;
   text-align: left;
+  margin-bottom: 50px;
   // padding: 80px 120px;
   // border: 2px solid #F4F4F4;
   a {
@@ -35,4 +37,10 @@
   color: rgb(200,200,200);
   margin-bottom: 40px;
 }
+
+.link_home {
+  text-align: center;
+  margin-left: 80px;
+}
+
 
