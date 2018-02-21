@@ -1,0 +1,41 @@
+/* Your board style here */
+#playground {
+  margin: auto;
+}
+
+#playground td {
+  height: 80px;
+  width: 80px;
+  border: 1px solid whitesmoke;
+}
+
+td {
+  background-size: 80px;
+  background-position: 0 20px;
+  background-repeat: no-repeat;
+}
+
+tr#player1_race td.active {
+  background-image: url(images/player_1.png);
+}
+
+tr#player2_race td.active {
+  background-image: url(images/player_2.png);
+}
+
+td:last-child {
+  background-image: url(images/finish.png);
+  background-position: 0 0;
+}
+
+td:last-child.active {
+  background-position: 0 20px, 0 0;
+}
+
+tr#player1_race td:last-child.active {
+  background-image: url(images/player_1.png), url('images/finish.png');
+}
+
+tr#player2_race td:last-child.active {
+  background-image: url(images/player_2.png), url('images/finish.png');
+}

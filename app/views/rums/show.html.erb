@@ -18,7 +18,7 @@
       <h3>Commander:</h3>
       <%= simple_form_for [@rum, @order] do |f| %>
         <%= f.input :quantity, placeholder: "Quantité désirée"  %></span>
-        <%= f.submit "Acheter ce rhum !", class: "btn btn-primary" %>
+        <%= f.submit "Acheter ce rhum !",id: "rum-order", class: "btn btn-primary" %>
       <% end %>
     </div>
   <% end %>
