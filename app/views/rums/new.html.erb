@@ -1,23 +1,24 @@
-<div class="banner-new">
-  <div class="banner-content-new">
-    <h1>Ajouter un rhum à vendre</h1>
-    <%= simple_form_for [@rum] do |f| %>
+<div class="new_rum_design">
+  <div class="banner-new">
+    <div class="banner-content-new">
+      <h1>Ajoute un rhum</h1>
+      <%= simple_form_for [@rum] do |f| %>
+        <br>
+        <%= f.input :name, label: "Nom du cocktail", class:"form-group", placeholder: "Nom du cocktail" %>
+        <br>
+        <%= f.input :volume, label: "Volume", class:"form-group", placeholder: "2L, 3 bouteilles, etc." %>
+        <br>
+        <%= f.input :price, label: "Prix en euros", class:"form-group", placeholder: "5, 10, etc." %>
+        <br>
+        <%= f.input :description, label: "Description", class:"form-group", placeholder: "Coco, épices, etc." %>
+        <br>
+        <%= f.input :anecdote, label: "Annecdote", class:"form-group", placeholder: "Blablabla" %>
+        <br>
+        <%= f.submit "C'est pawti", class: "btn btn-primary stylebutton " %>
+      <% end %>
       <br>
-      <%= f.input :name, label: "Nom du cocktail", class:"form-group", placeholder: "Nom du cocktail" %>
-      <br>
-      <%= f.input :volume, label: "Volume", class:"form-group", placeholder: "2L, 3 bouteilles, etc." %>
-      <br>
-      <%= f.input :price, label: "Prix en euros", class:"form-group", placeholder: "5, 10, etc." %>
-      <br>
-      <%= f.input :description, label: "Description", class:"form-group", placeholder: "Coco, épices, etc." %>
-      <br>
-      <%= f.input :anecdote, label: "Annecdote", class:"form-group", placeholder: "Blablabla" %>
-      <br>
-      <%= f.submit "Créer", class: "btn btn-primary" %>
-    <% end %>
-    <br>
-    <%= link_to "Revenir à la liste des rhums", rums_path %>
-    <!-- <a href="" class="btn-yours">Discover</a> -->
+      <%= link_to "Revenir à la liste des rhums", rums_path, class: "link_home"%>
+      <!-- <a href="" class="btn-yours">Discover</a> -->
+    </div>
   </div>
 </div>
-
