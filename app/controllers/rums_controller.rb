@@ -21,6 +21,21 @@ class RumsController < ApplicationController
     end
   end
 
+  def edit
+    @rum = Rum.find(params[:id])
+    authorize @rum
+  end
+
+  def update
+    @rum = Rum.find(params[:id])
+    authorize @rum
+    if @rum.update(rum_params)
+      redirect_to rum_path(@rum)
+    else
+      render :edit
+    end
+  end
+
   def show
     @rum = Rum.find(params[:id])
     @order = Order.new
