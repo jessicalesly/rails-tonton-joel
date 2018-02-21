@@ -1,0 +1,140 @@
+/* Your card CSS code here */
+.list-inline {
+  padding: 0px;
+  list-style: none;
+  margin: 0px;
+}
+.list-inline li {
+  display: inline-block;
+  padding: 0px 10px;
+  color: #1E56A0;
+}
+.list-inline li i {
+  font-size: 20px;
+  color: #1E56A0;
+}
+.list-inline li p {
+  color: #1E56A0;
+}
+.fa {
+  display: inline-block;
+}
+.card {
+  box-shadow: 2px 2px 2px 2px grey;
+  margin: 15px;
+  > a {
+    color: white;
+  }
+}
+.card-body {
+  color: white;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 275px;
+}
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  margin: 0px;
+}
+.card-avatar{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.card-desc{
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.card-desc p {
+  margin: 0px;
+  padding: 0px;
+}
+.card-desc h3 {
+  margin: 0px;
+  padding-bottom: 10px;
+}
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 30px;
+  margin: 0px;
+  color: rgb(100,100,100);
+}
+.card:hover {
+  /*box-shadow: 2px 2px 2px 2px black;*/
+  box-shadow: 0.5em 0.5em .4em grey;
+  /*margin-top: -5px;*/
+}
+
+/*.cards {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}*/
+/*.card-picture:hover .card-hover {
+  opacity: 1;
+}*/
+
+.wrapper-cards {
+  background-color: #F4F4F4;
+  padding: 90px;
+}
+.wrapper-map {
+  margin: 30px 0px;
+}
+
+.volume {
+    position: absolute;
+    top: 55px;
+    left: 10px;
+    margin: 0px;
+}
+
+.cancel {
+  position: absolute;
+  z-index: 1000;
+  top: 10px;
+  right: 10px;
+  margin: 0px;
+}
+
+.pay-btn {
+  position: absolute;
+    right: 45px;
+    margin: 0px;
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+
+.accept-btn{
+  position: absolute;
+  left: 150px;
+  margin: 0px;
+  width: 150px;
+}
+
+.refuse-btn {
+  position: absolute;
+  right: 150px;
+  margin: 0px;
+  width: 150px;
+}
+
+.card-message {
+  position: absolute;
+}

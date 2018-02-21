@@ -1,0 +1,28 @@
+.rum-card {
+  margin-top: 5vh;
+  display: flex
+}
+
+.rum-description-general {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+}
+
+#rum-thumb {
+  width: 250px;
+  height: 250px;
+}
+
+.rum-description-text {
+  display: block;
+  align-items: start;
+}
+
+.purchase-module {
+  padding: 20px;
+  display: block;
+}
+
+
