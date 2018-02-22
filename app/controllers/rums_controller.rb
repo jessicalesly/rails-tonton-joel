@@ -2,7 +2,12 @@ class RumsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @rums = policy_scope(Rum).order(created_at: :desc)
+
+  if params[:query].present?
+      @rums = Rum.where(availability: true).search_rum(params[:query]).to_a
+    else
+      @rums = policy_scope(Rum).where(availability: true).order(created_at: :desc)
+    end
   end
 
   def new
@@ -52,7 +57,7 @@ class RumsController < ApplicationController
   private
 
   def rum_params
-    params.require(:rum).permit(:name, :description, :volume, :annecdote, :availability, :price)
+    params.require(:rum).permit(:name, :description, :volume, :annecdote, :origin, :availability, :price)
   end
 #
 

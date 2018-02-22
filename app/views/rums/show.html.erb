@@ -1,31 +1,45 @@
 <div class = container>
-<div class="rum-card">
-  <div class="rum-description-general">
-    <%= image_tag "daiquiri.jpg", id: "rum-thumb"  %>
-    <div class="rum-description-text">
-      <p><strong><%= @rum.name %></strong></p>
-      <p><strong>Description:</strong><%= @rum.description %></p>
-      <p><strong>Annecdote:</strong><%= @rum.anecdote %>
-      <p><strong>Price:</strong><%= @rum.price %> € </p>
+  <div class="rum-card">
+    <div class="rum-description-general">
+      <%= image_tag "daiquiri.jpg", id: "rum-thumb"  %>
+      <div class="rum-description-text">
+        <p><strong><%= @rum.name %></strong></p>
+        <p><strong>Description:</strong><%= @rum.description %></p>
+        <p><strong>Annecdote:</strong><%= @rum.anecdote %>
+          <p><strong>Price:</strong><%= @rum.price %> € </p>
+        </div>
+      </div>
+      <% if policy(@rum).edit? %>
+      <div class="vendor-module" >
+        <%= link_to "Mettre à jour ce rhum", edit_rum_path %>
+      </div>
+      <% elsif policy(@rum).edit? == false && @rum.availability%>
+      <div class="purchase-module" >
+        <h3>Commander:</h3>
+          <%= simple_form_for [@rum, @order] do |f| %>
+          <%= f.input :quantity, placeholder: "Quantité désirée"  %></span>
+          <%= f.submit "Acheter ce rhum !",id: "rum-order", class: "btn btn-primary" %>
+          <% end %>
+        <% else %>
+        <div class="purchase-module" >
+          <h3>Non disponible</h3>
+          <p>Victime de son succès </p>
+        </div>
+        <% end %>
+      </div>
     </div>
   </div>
-  <% if policy(@rum).edit? %>
-    <div class="vendor-module" >
-      <%= link_to "Mettre à jour ce rhum", edit_rum_path %>
-    </div>
-  <% elsif policy(@rum).edit? == false %>
-    <div class="purchase-module" >
-      <h3>Commander:</h3>
-      <%= simple_form_for [@rum, @order] do |f| %>
-        <%= f.input :quantity, placeholder: "Quantité désirée"  %></span>
-        <%= f.submit "Acheter ce rhum !",id: "rum-order", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-  <% end %>
-</div>
 
-<%= link_to "Retour à la page d'accueil", rums_path %>
-</div>
+  <div class="description">
+    <h4>Qui est ton Joël ?</h4>
+    <%= image_tag "https://kitt.lewagon.com/placeholder/users/kriscard"%>
+    <ul>
+      <li><strong>Ton Joël s'appelle: </strong> <%= @rum.user.username %></li>
+      <li><strong>Il a déjà mis en vente:  </strong><%= @rum.user.rums.count  %> rums </li>
+    </ul>
+  </div>
+
+  <%= link_to "Retour à la page d'accueil", rums_path %>
 
 <div class="container-map">
   <div
