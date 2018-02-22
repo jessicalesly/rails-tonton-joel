@@ -4,9 +4,9 @@ class RumsController < ApplicationController
   def index
 
   if params[:query].present?
-      @rums = Rum.search_rum(params[:query]).to_a
+      @rums = Rum.where(availability: true).search_rum(params[:query]).to_a
     else
-      @rums = policy_scope(Rum).order(created_at: :desc)
+      @rums = policy_scope(Rum).where(availability: true).order(created_at: :desc)
     end
   end
 
