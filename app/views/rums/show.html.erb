@@ -6,34 +6,41 @@
         <p><strong><%= @rum.name %></strong></p>
         <p><strong>Description:</strong><%= @rum.description %></p>
         <p><strong>Annecdote:</strong><%= @rum.anecdote %>
-          <p><strong>Price:</strong><%= @rum.price %> € </p>
-        </div>
-      </div>
-      <% if policy(@rum).edit? %>
-      <div class="vendor-module" >
-        <%= link_to "Mettre à jour ce rhum", edit_rum_path %>
-      </div>
-      <% elsif policy(@rum).edit? == false && @rum.availability%>
-      <div class="purchase-module" >
-        <h3>Commander:</h3>
-        <%= simple_form_for [@rum, @order] do |f| %>
-        <%= f.input :quantity, placeholder: "Quantité désirée"  %></span>
-        <%= f.submit "Acheter ce rhum !",id: "rum-order", class: "btn btn-primary" %>
-        <% end %>
-        <% else %>
-        <div class="purchase-module" >
-          <h3>Non disponible</h3>
-          <p>Victime de son succès </p>
-        </div>
-        <% end %>
+        <p><strong>Price:</strong><%= @rum.price %> € </p>
+        <%if @rum.reviews.present? %>
+          <% @rum.reviews.each do |review|%>
+            <p><strong>Feedback:</strong> <%=review.content%></p>
+            <p><strong>Rating:</strong> <%=review.rating%></p>
+          <% end %>
+      <% end %>
       </div>
     </div>
-  <% end %>
+      <% if policy(@rum).edit? %>
+    <div class="vendor-module" >
+      <%= link_to "Mettre à jour ce rhum", edit_rum_path %>
+    </div>
+      <% elsif policy(@rum).edit? == false && @rum.availability%>
+        <div class="purchase-module" >
+          <h3>Commander:</h3>
+          <%= simple_form_for [@rum, @order] do |f| %>
+          <%= f.input :quantity, placeholder: "Quantité désirée"  %></span>
+          <%= f.submit "Acheter ce rhum !",id: "rum-order", class: "btn btn-primary" %>
+          <% end %>
+      <% else %>
+      <div class="purchase-module" >
+        <h3>Non disponible</h3>
+          <p>Victime de son succès </p>
+      </div>
+      <% end %>
+      </div>
+  </div>
 </div>
+
+<p><%= link_to "Noter ce rhum", new_rum_review_path(@rum), class: 'btn btn-warning' %></p>
 
 <div class="description">
     <h4>Qui est ton Joël ?</h4>
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{current_user.username}"%>
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/kriscard"%>
        <ul>
           <li><strong>Ton Joël s'appelle: </strong> <%= @rum.user.username %></li>
           <li><strong>Il a déjà mis en vente:  </strong><%= @rum.user.rums.count  %> rums </li>
@@ -41,4 +48,3 @@
 </div>
 
 <%= link_to "Retour à la page d'accueil", rums_path %>
-</div>

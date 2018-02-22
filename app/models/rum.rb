@@ -1,6 +1,7 @@
 class Rum < ApplicationRecord
   belongs_to :user
   has_many :orders
+  has_many :reviews
   validates :name, presence: true
   validates :price, presence: true
   validates :volume, presence: true
