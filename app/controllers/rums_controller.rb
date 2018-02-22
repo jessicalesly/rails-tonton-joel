@@ -40,6 +40,15 @@ class RumsController < ApplicationController
     @rum = Rum.find(params[:id])
     @order = Order.new
     authorize @rum
+    @rums = Rum.where.not(latitude: nil, longitude: nil)
+
+    @markers = @rums.map do |rum|
+      {
+        lat: rum.latitude,
+        lng: rum.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
   end
 
   private
