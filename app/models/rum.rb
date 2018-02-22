@@ -2,6 +2,7 @@ class Rum < ApplicationRecord
   belongs_to :user
   has_many :orders
   mount_uploader :photo, PhotoUploader
+  has_many :reviews
   validates :name, presence: true
   validates :price, presence: true
   validates :volume, presence: true
