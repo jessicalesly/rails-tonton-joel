@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :orders
   has_many :rums
+  mount_uploader :photo, PhotoUploader
   validates :username, presence: true
 end

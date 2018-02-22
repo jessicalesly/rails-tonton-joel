@@ -16,6 +16,9 @@
         <br>
         <%= f.input :anecdote, label: "Annecdote", class:"form-group", placeholder: "Waconte-nous une histoire mon petit Joël" %>
         <br>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <br>
         <%= f.submit "C'est pawti", class: "btn btn-primary stylebutton " %>
       <% end %>
       <br>

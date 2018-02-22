@@ -16,6 +16,8 @@ gem 'redis'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
+gem 'carrierwave', '~> 1.2'
+gem 'cloudinary'
 gem 'font-awesome-sass'
 gem 'sass-rails'
 gem 'simple_form'

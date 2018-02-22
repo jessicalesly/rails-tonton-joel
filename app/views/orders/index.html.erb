@@ -2,7 +2,11 @@
   <div class="container" id="container-center">
     <!-- Avatar and username -->
     <div class="profile-header-infos">
-      <img src=<%= "https://kitt.lewagon.com/placeholder/users/#{current_user.username}" %> alt="" class="avatar">
+      <% if current_user.photo.file.nil? %>
+        <img src="<%=image_path('pascal.jpg')%>" alt="" class="avatar legitimus">
+      <% else %>
+        <%= cl_image_tag current_user.photo, height: 300, width: 400, crop: :fill, class:"avatar" %>
+      <% end %>
       <h1> Mon dashboard </h1>
       <h2> @<%= current_user.username %> </h2>
     </div>
