@@ -12,7 +12,9 @@
         <br>
         <%= f.input :description, label: "Description", class:"form-group", placeholder: "Coco, épices, etc." %>
         <br>
-        <%= f.input :anecdote, label: "Annecdote", class:"form-group", placeholder: "Blablabla" %>
+         <%= f.input :origin, include_blank: false, class:"form-group", as: :select, collection: ["Guadeloupe", "Martinique","Cuba","Brésil"] %>
+        <br>
+        <%= f.input :anecdote, label: "Annecdote", class:"form-group", placeholder: "Waconte-nous une histoire mon petit Joël" %>
         <br>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>

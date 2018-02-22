@@ -2,7 +2,9 @@ source 'https://rubygems.org'
 ruby '2.4.3'
 
 # Authorization
-gem "pundit"
+gem 'pundit'
+gem 'geocoder'
+gem 'pg_search'
 
 gem 'devise'
 gem 'figaro'

@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20180222105824) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -37,6 +38,9 @@ ActiveRecord::Schema.define(version: 20180222105824) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "volume"
+    t.string "origin"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_rums_on_user_id"
   end
 

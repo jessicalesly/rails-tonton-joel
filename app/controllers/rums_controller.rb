@@ -2,7 +2,12 @@ class RumsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @rums = policy_scope(Rum).order(created_at: :desc)
+
+  if params[:query].present?
+      @rums = Rum.where(availability: true).search_rum(params[:query]).to_a
+    else
+      @rums = policy_scope(Rum).where(availability: true).order(created_at: :desc)
+    end
   end
 
   def new
@@ -40,12 +45,19 @@ class RumsController < ApplicationController
     @rum = Rum.find(params[:id])
     @order = Order.new
     authorize @rum
+    @rums = Rum.where.not(latitude: nil, longitude: nil)
+
+    @markers = [{
+        lat: @rum.latitude,
+        lng: @rum.longitude
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }]
   end
 
   private
 
   def rum_params
-    params.require(:rum).permit(:photo, :name, :description, :volume, :annecdote, :availability, :price)
+    params.require(:rum).permit(:photo, :name, :description, :volume, :annecdote, :origin, :availability, :price)
   end
 #
 

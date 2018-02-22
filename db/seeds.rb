@@ -12,23 +12,23 @@ user1.save!
 user2 = User.new(username: "jessicalesly", email: "jessica@gmail.com", password: "123456")
 user2.save!
 
-rum1 = Rum.new(name: "Le planteur", price: 10, volume: "1 bouteille")
+rum1 = Rum.new(name: "Le planteur", price: 10, volume: "1 bouteille", origin: "Antilles")
 rum1.user = User.first
 rum1.save!
 
-rum2 = Rum.new(name: "Le punch", price: 11, volume: "2 bouteilles")
+rum2 = Rum.new(name: "Le punch", price: 11, volume: "2 bouteilles", origin: "Antilles")
 rum2.user = User.first
 rum2.save!
 
-rum3 = Rum.new(name: "Le ti'punch", price: 12, volume: "3 bouteilles")
+rum3 = Rum.new(name: "Le ti'punch", price: 12, volume: "3 bouteilles", origin: "Antilles")
 rum3.user = User.first
 rum3.save!
 
-rum4 = Rum.new(name: "Le cuba libre", price: 13, volume: "4 bouteilles")
+rum4 = Rum.new(name: "Le cuba libre", price: 13, volume: "4 bouteilles", origin: "Cuba")
 rum4.user = User.first
 rum4.save!
 
-rum5 = Rum.new(name: "Le daiquiri", price: 14, volume: "5 bouteilles")
+rum5 = Rum.new(name: "Le daiquiri", price: 14, volume: "5 bouteilles", origin: "Cuba")
 rum5.user = User.first
 rum5.save!
 
