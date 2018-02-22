@@ -24,5 +24,14 @@
   <% end %>
 </div>
 
+<div class="description">
+    <h4>Qui est ton Joël ?</h4>
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{current_user.username}"%>
+       <ul>
+          <li><strong>Ton Joël s'appelle: </strong> <%= @rum.user.username %></li>
+          <li><strong>Il a déjà mis en vente:  </strong><%= @rum.user.rums.count  %> rums </li>
+      </ul>
+</div>
+
 <%= link_to "Retour à la page d'accueil", rums_path %>
 </div>
