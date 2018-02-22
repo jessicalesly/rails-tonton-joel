@@ -2,7 +2,12 @@ class RumsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @rums = policy_scope(Rum).order(created_at: :desc)
+
+  if params[:query].present?
+      @rums = Rum.search_rum(params[:query]).to_a
+    else
+      @rums = policy_scope(Rum).order(created_at: :desc)
+    end
   end
 
   def new
