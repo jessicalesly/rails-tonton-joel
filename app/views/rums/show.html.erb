@@ -1,28 +1,32 @@
 <div class = container>
-<div class="rum-card">
-  <div class="rum-description-general">
-    <%= image_tag "daiquiri.jpg", id: "rum-thumb"  %>
-    <div class="rum-description-text">
-      <p><strong><%= @rum.name %></strong></p>
-      <p><strong>Description:</strong><%= @rum.description %></p>
-      <p><strong>Annecdote:</strong><%= @rum.anecdote %>
-      <p><strong>Price:</strong><%= @rum.price %> € </p>
-    </div>
-  </div>
-  <% if policy(@rum).edit? %>
-    <div class="vendor-module" >
-      <%= link_to "Mettre à jour ce rhum", edit_rum_path %>
-    </div>
-  <% elsif policy(@rum).edit? == false %>
-    <div class="purchase-module" >
-      <h3>Commander:</h3>
-      <%= simple_form_for [@rum, @order] do |f| %>
+  <div class="rum-card">
+    <div class="rum-description-general">
+      <%= image_tag "daiquiri.jpg", id: "rum-thumb"  %>
+      <div class="rum-description-text">
+        <p><strong><%= @rum.name %></strong></p>
+        <p><strong>Description:</strong><%= @rum.description %></p>
+        <p><strong>Annecdote:</strong><%= @rum.anecdote %>
+          <p><strong>Price:</strong><%= @rum.price %> € </p>
+        </div>
+      </div>
+      <% if policy(@rum).edit? %>
+      <div class="vendor-module" >
+        <%= link_to "Mettre à jour ce rhum", edit_rum_path %>
+      </div>
+      <% elsif policy(@rum).edit? == false && @rum.availability%>
+      <div class="purchase-module" >
+        <h3>Commander:</h3>
+        <%= simple_form_for [@rum, @order] do |f| %>
         <%= f.input :quantity, placeholder: "Quantité désirée"  %></span>
         <%= f.submit "Acheter ce rhum !",id: "rum-order", class: "btn btn-primary" %>
-      <% end %>
+        <% end %>
+        <% else %>
+        <div class="purchase-module" >
+          <h3>Non disponible</h3>
+          <p>Victime de son succès </p>
+        </div>
+        <% end %>
+      </div>
     </div>
-  <% end %>
-</div>
-
-<%= link_to "Retour à la page d'accueil", rums_path %>
-</div>
+    <%= link_to "Retour à la page d'accueil", rums_path %>
+  </div>
