@@ -16,17 +16,19 @@
   <body>
     <%= yield %>
     <%= javascript_include_tag "application" %>
-    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js" %>
+    <%#= javascript_include_tag "https://maps.googleapis.com/maps/api/js" %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
+    <%= javascript_pack_tag "application" %>
     <%= javascript_pack_tag "map" %>
   </body>
-  <div class="footer">
-    <div class="footer-links">
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-facebook-square"></i></a>
-      <a href="#"><i class="fab fa-twitter-square"></i></a>
+    <div class="footer">
+      <div class="footer-links">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook-square"></i></a>
+        <a href="#"><i class="fab fa-twitter-square"></i></a>
+      </div>
+      <div class="footer-copyright">
+        <em>This footer is made with at Le Wagon</em>
+      </div>
     </div>
-    <div class="footer-copyright">
-      <em>This footer is made with at Le Wagon</em>
-    </div>
-  </div>
 </html>
