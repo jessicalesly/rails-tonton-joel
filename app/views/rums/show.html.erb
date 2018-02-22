@@ -16,10 +16,10 @@
       <% elsif policy(@rum).edit? == false && @rum.availability%>
       <div class="purchase-module" >
         <h3>Commander:</h3>
-        <%= simple_form_for [@rum, @order] do |f| %>
-        <%= f.input :quantity, placeholder: "Quantité désirée"  %></span>
-        <%= f.submit "Acheter ce rhum !",id: "rum-order", class: "btn btn-primary" %>
-        <% end %>
+          <%= simple_form_for [@rum, @order] do |f| %>
+          <%= f.input :quantity, placeholder: "Quantité désirée"  %></span>
+          <%= f.submit "Acheter ce rhum !",id: "rum-order", class: "btn btn-primary" %>
+          <% end %>
         <% else %>
         <div class="purchase-module" >
           <h3>Non disponible</h3>
@@ -28,17 +28,15 @@
         <% end %>
       </div>
     </div>
-  <% end %>
-</div>
+  </div>
 
-<div class="description">
+  <div class="description">
     <h4>Qui est ton Joël ?</h4>
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{current_user.username}"%>
-       <ul>
-          <li><strong>Ton Joël s'appelle: </strong> <%= @rum.user.username %></li>
-          <li><strong>Il a déjà mis en vente:  </strong><%= @rum.user.rums.count  %> rums </li>
-      </ul>
-</div>
+    <%= image_tag "https://kitt.lewagon.com/placeholder/users/kriscard"%>
+    <ul>
+      <li><strong>Ton Joël s'appelle: </strong> <%= @rum.user.username %></li>
+      <li><strong>Il a déjà mis en vente:  </strong><%= @rum.user.rums.count  %> rums </li>
+    </ul>
+  </div>
 
-<%= link_to "Retour à la page d'accueil", rums_path %>
-</div>
+  <%= link_to "Retour à la page d'accueil", rums_path %>
