@@ -41,6 +41,18 @@ class RumsController < ApplicationController
     end
   end
 
+  def update_status
+    @rum = Rum.find(params[:id])
+    authorize @rum
+    if @rum.availability
+      @rum.availability = false
+    else
+      @rum.availability = true
+    end
+    @rum.save
+    redirect_to orders_path
+  end
+
   def show
     @rum = Rum.find(params[:id])
     @review = Review.new
