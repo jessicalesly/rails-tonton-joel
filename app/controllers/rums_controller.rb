@@ -43,6 +43,7 @@ class RumsController < ApplicationController
 
   def show
     @rum = Rum.find(params[:id])
+    @review = Review.new
     @order = Order.new
     authorize @rum
     @rums = Rum.where.not(latitude: nil, longitude: nil)
