@@ -1,3 +1,4 @@
+import "material-components-web/index";
 import "bootstrap";
 import { switch_tabs } from './switch_tabs';
 import { loadDynamicBannerText } from '../components/banner';

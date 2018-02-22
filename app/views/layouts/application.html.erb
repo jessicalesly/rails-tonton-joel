@@ -8,7 +8,8 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
-
+    <link rel="stylesheet"
+          href="node_modules/material-components-web/dist/material-components-web.css">
   </head>
   <!-- Beginning of the navbar -->
   <%= render 'shared/navbar' %>
@@ -31,4 +32,6 @@
         <em>This footer is made with at Le Wagon</em>
       </div>
     </div>
+    <script src="node_modules/material-components-web/dist/material-components-web.js"></script>
+    <script>mdc.autoInit()</script>
 </html>

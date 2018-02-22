@@ -1,6 +1,10 @@
-.container-map {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  margin: 50px 500px 20px 130px;
+#map {
+  flex: 0 0 450px;
+  height: 100vh;
+  position: sticky !important;
+  top: 0 !important;
 }
+.content {
+  display: flex;
+}
+

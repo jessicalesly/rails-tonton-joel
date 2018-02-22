@@ -1,80 +1,92 @@
-<div class = container>
 
-  <div class="rum-card">
-    <div class="rum-description-general">
-      <% if @rum.photo.file.nil? %>
-        <%= image_tag "daiquiri.jpg", id: "rum-thumb" %>
-      <% else %>
-        <%= cl_image_tag @rum.photo, height: 300, width: 400, crop: :fill, id: "rum-thumb" %>
-      <% end %>
+<!-- Redirection to home page -->
+<div class="container">
+      <%= link_to "Retour", rums_path, class: "return_button"%>
 
-      <div class="rum-description-text">
-        <p><strong><%= @rum.name %></strong></p>
-        <p><strong>Description:</strong><%= @rum.description %></p>
-        <p><strong>Annecdote:</strong><%= @rum.anecdote %>
-        <p><strong>Price:</strong><%= @rum.price %> € </p>
-        <%if @rum.reviews.present? %>
-          <% @rum.reviews.each do |review|%>
-            <p><strong>Feedback:</strong> <%=review.content%></p>
-            <p><strong>Rating:</strong> <%=review.rating%></p>
-          <% end %>
-        <% end %>
+      <!-- Regroupe photo / Description / Map -->
+      <div class="content">
+        <!-- white wrapper -->
+        <div class="first_line">
+          <!-- Image of cocktail -->
+            <div class="rum-card image_rum">
+              <div class="rum-description-general">
+                <% if @rum.photo.file.nil? %>
+                  <%= image_tag "daiquiri.jpg", id: "rum-thumb", class:'image_rum' %>
+                <% else %>
+                  <%= cl_image_tag @rum.photo, height: 300, width: 400, crop: :fill, id: "rum-thumb" %>
+                <% end %>
+
+                <!-- Coctail description -->
+                <div class="rum-description-text">
+                    <p><strong><%= @rum.name %></strong></p>
+                    <p><strong>Description:</strong><%= @rum.description %></p>
+                    <p><strong>Annecdote:</strong><%= @rum.anecdote %>
+                    <p><strong>Price: </strong><%= @rum.price %> € </p>
+                </div>
+              </div>
+          </div>
+        </div>
+        <!-- Google Map -->
+          <div id="map" style="width: 100%; height: 500px;" data-markers="<%= @markers.to_json %>"></div>
       </div>
+      <!-- Purchase block -->
+      <div class="design_purchase_block">
+        <% if policy(@rum).edit? %>
+          <div class="vendor-module" >
+            <%= link_to "Mettre à jour ce rhum", edit_rum_path %>
+          </div>
+        <% elsif policy(@rum).edit? == false && @rum.availability%>
+          <div class="purchase-module" >
+            <h3>Commander:</h3>
+              <%= simple_form_for [@rum, @order] do |f| %>
+                <%= f.input :quantity, placeholder: "Quantité désirée"  %></span>
+                <%= f.submit "Acheter ce rhum !",id: "rum-order", class: "btn btn-primary" %>
+              <% end %>
+          </div>
+        <% else %>
+          <div class="purchase-module" >
+            <h3>Non disponible</h3>
+            <p>Victime de son succès </p>
+          </div>
+        <% end %>
     </div>
-
-    <% if policy(@rum).edit? %>
-      <div class="vendor-module" >
-        <%= link_to "Mettre à jour ce rhum", edit_rum_path %>
-      </div>
-    <% elsif policy(@rum).edit? == false && @rum.availability%>
-      <div class="purchase-module" >
-        <h3>Commander:</h3>
-        <%= simple_form_for [@rum, @order] do |f| %>
-          <%= f.input :quantity, placeholder: "Quantité désirée"  %></span>
-          <%= f.submit "Acheter ce rhum !",id: "rum-order", class: "btn btn-primary" %>
+  </div>
+</div>
+<!-- Review block  -->
+<div class="wrapper_review ">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6, col-md-6">
+        <% if @rum.reviews %>
+          <ul>
+            <% @rum.reviews.each do |review| %>
+              <li> <%= review.user.username %>, <%= review.rating %>/5 : <%= review.content %> </li>
+              <% end %>
+          </ul>
         <% end %>
+        <% if policy(@rum).edit? == false && user_signed_in? %>
+          <h1>Note cette douceuw</h1>
+            <%= simple_form_for [@rum, @review] do |f| %>
+              <%= f.input :content %>
+              <%= f.input :rating, collection:[0,1,2,3,4,5] %>
+              <%= f.submit "C'est chaud ici", class: "btn btn-primary" %>
+              <% end %>
+            <% end %>
+          </div>
       </div>
-    <% else %>
-      <div class="purchase-module" >
-        <h3>Non disponible</h3>
-        <p>Victime de son succès </p>
-      </div>
-    <% end %>
-
   </div>
 </div>
 
-<!-- <p><%#= link_to "Noter ce rhum", new_rum_review_path(@rum), class: 'btn btn-warning' %></p> -->
-<div class="container ">
-  <% if @rum.reviews %>
-    <ul>
-      <% @rum.reviews.each do |review| %>
-        <li> <%= review.user.username %>, <%= review.rating %>/5 : <%= review.content %> </li>
-      <% end %>
-    </ul>
-  <% end %>
-
-  <% if policy(@rum).edit? == false && user_signed_in? %>
-    <h1>Note cette douceuw</h1>
-    <%= simple_form_for [@rum, @review] do |f| %>
-      <%= f.input :content %>
-      <%= f.input :rating, collection:[0,1,2,3,4,5] %>
-      <%= f.submit "C'est chaud ici", class: "btn btn-primary" %>
-    <% end %>
-  <% end %>
-</div>
-
+<!-- Vendor information block -->
 <div class="description">
-  <h4>Qui est ton Joël ?</h4>
-  <%= image_tag "https://kitt.lewagon.com/placeholder/users/kriscard"%>
+<h4>Qui est ton Joël ?</h4>
+  <% if current_user.photo.file.nil? %>
+    <img src="<%=image_path('pascal.jpg')%>" alt="" class="avatar legitimus">
+  <%else %>
+    <%= cl_image_tag current_user.photo, height: 300, width: 400, crop: :fill, class:"avatar" %>
+  <% end %>
   <ul>
     <li><strong>Ton Joël s'appelle: </strong> <%= @rum.user.username %></li>
     <li><strong>Il a déjà mis en vente:  </strong><%= @rum.user.rums.count  %> rums </li>
   </ul>
-</div>
-
-<%= link_to "Retour à la page d'accueil", rums_path %>
-
-<div class="container-map">
-  <div id="map" style="width: 100%; height: 500px;" data-markers="<%= @markers.to_json %>"></div>
 </div>

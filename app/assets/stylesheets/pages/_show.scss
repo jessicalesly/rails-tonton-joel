@@ -1,0 +1,39 @@
+.return_button {
+  background: white;
+  width: 100vh;
+  color:black;
+  padding-top: 10px;
+  &:hover {
+    opacity: 0.5;
+    padding: 10px;
+  }
+}
+
+.firstwrapper {
+  background: white;
+  margin-top: 0;
+}
+
+.image_rum {
+  border-radius: 10px;
+  height: 750;
+  width: 500;
+}
+
+
+.first_line {
+  width: 100vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.design_purchase_block {
+  display: right;
+  margin-left: 20px;
+}
+
+.wrapper_review {
+  background: white;
+  padding: 20px;
+}
