@@ -4,4 +4,5 @@ class Rum < ApplicationRecord
   validates :name, presence: true
   validates :price, presence: true
   validates :volume, presence: true
+  validates :origin, presence: true
 end
