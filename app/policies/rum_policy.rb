@@ -29,6 +29,10 @@ class RumPolicy < ApplicationPolicy
     record.user == user
   end
 
+  def update_status?
+    record.user == user
+  end
+
   class Scope < Scope
     def resolve
       scope.all

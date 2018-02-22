@@ -13,6 +13,10 @@
         <h3>Mes commandes</h3>
         <h4><%= @orders_purchases.count %> en cours</h4>
       </a>
+      <a id="tab_center" class="tab" href="#">
+        <h3>Mes rhums</h3>
+        <h4><%= @my_rums.count %> enregistré(s)</h4>
+      </a>
       <a id="tab_right" class="tab" href="#">
         <h3>Mes ventes</h3>
         <h4><%= @orders_sales.count %> en cours </h4>
@@ -64,6 +68,38 @@
                 <% else %>
                   <h4 class="card-message-order">Statut de la vente: <%= order.status.capitalize %></h4>
                 <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="div_center">
+    <div class="row">
+
+      <% if @my_rums.count == 0 %>
+
+        <div class="card-order-nothing">
+          <%= link_to "mettre en ligne un rhum", rums_path, class: "btn btn-primary" %>
+        </div>
+
+      <% else %>
+
+        <% @my_rums.each do |rum|  %>
+          <div class="col-md-6">
+            <div class="card-order">
+              <div class="card-body-order" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url(<%= image_path "pinacolada.jpg" %>);">
+                <h2 class="card-category-order"><%= rum.name.capitalize %></h2>
+                <h4 class="volume">Volume: <%= rum.volume %></h4>
+                <%#= link_to "", "", class: "card-link-order" %>
+                <% if rum.availability == true %>
+                <%= link_to "Changer la dispo du Rum", update_rum_path(rum), class: "cancel btn btn-danger" %>
+                <% end %>
+                <p> <%= rum.availability ? "dispo" : "indispo" %>
+                </p>
               </div>
             </div>
           </div>

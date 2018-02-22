@@ -16,7 +16,7 @@
 }
 
 .tab {
-  flex: 0 0 50%;
+  flex: 0 0 33%;
   background-color: #F4F4F4;
   color: #0c2240;
 }
@@ -29,9 +29,14 @@
   background-color: #bbcce2;
 }
 
-.tab:first-child {
+.tab:nth-child(1) {
   border-radius: 5px 0 0 0; /* clockwise starting top-left*/
 }
-.tab:last-child {
+
+.tab:nth-child(2) {
+  // no border radius
+}
+
+.tab:nth-child(3) {
   border-radius: 0 5px 0 0; /* clockwise starting top-left*/
 }

@@ -1,15 +1,13 @@
 class OrdersController < ApplicationController
   def index
-    @orders_purchases = policy_scope(Order).select do |order|
-      order.user == current_user
-    end
-    @orders_sales = policy_scope(Order).select do |order|
-      order.user != current_user
-    end
+    orders = policy_scope(Order)
+    @orders_purchases = orders.select { |order| order.user == current_user }
+    @orders_sales = orders.select { |order| order.user != current_user }
+    @my_rums = current_user.rums
   end
 
   def create
-    sleep 1.5
+    sleep 2
     @order = Order.new(order_params)
     authorize @order
     @order.rum = Rum.find(params[:rum_id])
