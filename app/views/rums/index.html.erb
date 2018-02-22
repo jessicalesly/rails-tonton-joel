@@ -39,9 +39,12 @@
     <div class="row">
       <% @rums.each do |rum|%>
       <div class="col-xs-12 col-sm-4">
-        <!-- <div class="card" style ="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-        url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>')"> -->
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/1600x900/?cocktail');">
+        <% if rum.photo.file.nil? %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/1600x900/?cocktail');">
+        <% else %>
+          <div class="card" style ="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+        url('<%= cl_image_path rum.photo, height: 300, width: 400, crop: :fill %>')">
+        <% end %>
           <div class="card-description">
             <p><%= link_to rum.name, rum_path(rum) %></p>
           </div>
