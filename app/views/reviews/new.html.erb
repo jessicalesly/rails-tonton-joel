@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Note cette douceuw</h1>
+  <%= simple_form_for [@rum, @review] do |f| %>
+    <%= f.input :content %>
+    <%= f.input :rating, collection:[0,1,2,3,4,5] %>
+    <%= f.submit "C'est chaud ici", class: "btn btn-primary" %>
+  <% end %>
+</div>
