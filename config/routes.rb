@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: 'rums#index'
   resources :rums, only: [:index, :show, :new, :create, :edit, :update] do
     resources :orders, only: [:create]
-    resources :reviews, only: [:new, :create]
+    resources :reviews, only: [:create]
   end
   resources :orders, only: [:index, :update]
   get 'orders/:id/cancel', to: 'orders#cancel', as: 'cancel_order'
