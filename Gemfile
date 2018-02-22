@@ -3,6 +3,7 @@ ruby '2.4.3'
 
 # Authorization
 gem "pundit"
+gem "geocoder"
 
 gem 'devise'
 gem 'figaro'
