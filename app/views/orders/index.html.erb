@@ -3,7 +3,7 @@
     <!-- Avatar and username -->
     <div class="profile-header-infos">
       <% if current_user.photo.file.nil? %>
-        <img src="<%=image_path('pascal.jpg')%>" alt="" class="avatar">
+        <img src="<%=image_path('pascal.jpg')%>" alt="" class="avatar legitimus">
       <% else %>
         <%= cl_image_tag current_user.photo, height: 300, width: 400, crop: :fill, class:"avatar" %>
       <% end %>
