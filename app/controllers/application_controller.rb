@@ -21,6 +21,12 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:username, :photo, :is_vendor])
   end
 
+  protected
+
+  # def after_sign_in_path_for(resource)
+  #   current_user_path
+  # end
+
   private
 
   def skip_pundit?
