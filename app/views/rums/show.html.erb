@@ -1,7 +1,8 @@
 <div class = container>
 <div class="rum-card">
   <div class="rum-description-general">
-    <%= image_tag "daiquiri.jpg", id: "rum-thumb"  %>
+    <%= cl_image_tag @rum.photo, height: 300, width: 400, crop: :fill, id: "rum-thumb" %>
+    <%#= image_tag "daiquiri.jpg"  %>
     <div class="rum-description-text">
       <p><strong><%= @rum.name %></strong></p>
       <p><strong>Description:</strong><%= @rum.description %></p>
