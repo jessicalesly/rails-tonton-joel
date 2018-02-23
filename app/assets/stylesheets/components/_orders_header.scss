@@ -11,6 +11,15 @@
 .profile-header-infos {
   padding: 15px;
   color: white;
+  h3 {
+    color: white;
+  }
+  a {
+    color: #F4F4F4;
+    padding-left: 40px;
+  }
+  display: flex;
+  align-items: center;
 }
 
 .profile-header-infos {
@@ -19,13 +28,15 @@
 }
 
 .wrapper-purchases {
-  background-color: #bbcce2;
+  // background-color: #bbcce2;
+  background-color: #F4F4F4;
   padding-top: 30px;
   padding-bottom: 50px;
 }
 
 .wrapper-sales {
-  background-color: #bbcce2;
+  // background-color: #bbcce2;
+  background-color: #F4F4F4;
   padding-top: 30px;
   padding-bottom: 50px;
 }

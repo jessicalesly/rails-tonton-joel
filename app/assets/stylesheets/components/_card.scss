@@ -145,3 +145,44 @@
 // .card-message-order {
 //   position: absolute;
 // }
+
+
+.card-order-index {
+  // position: relative;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-order-coconut {
+  // position: relative;
+  // left: 5px;
+  width: 100px;
+  height: 100px;
+}
+
+.card-order-index-desc {
+  // position: relative;
+  // left: 150px;
+}
+
+.card-order-index-status {
+  // position: absolute;
+  // top: 5px;
+  // right: 5px;
+}
+
+.card-order-index-cancel {
+  // position: absolute;
+  // top: 50px;
+  // right: 5px;
+}
+
+.card-order-index-pay {
+  // position: absolute;
+  // bottom: 10px;
+  // right: 5px;
+}
