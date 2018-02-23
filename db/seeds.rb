@@ -52,6 +52,7 @@ rum1 = Rum.new({
   description: "Cocktail composé de rhum blanc, de rhum vieux, de sirop de canne, de citron vert, de jus de goyave et jus d'ananas et d'une pointe de cannelle.",
   origin: "Guadeloupe"
 })
+rum1.remote_photo_url = 'https://www.atelier-cocktail.com/uploads/cocktail-banner/900X471/20150610165340740781.png'
 rum1.user = User.first
 rum1.save!
 rum2 = Rum.new({
@@ -61,6 +62,7 @@ rum2 = Rum.new({
   description: "Avec du sirop naturel et artisanal de gingembre !",
   origin: "Martinique"
 })
+rum2.remote_photo_url = 'https://boiremixologie.com/files/medias/_imageCarrousel/cocktail-punch-gingembre.jpg'
 rum2.user = User.first
 rum2.save!
 rum3 = Rum.new({
@@ -70,6 +72,7 @@ rum3 = Rum.new({
   description: "Un fond de sucre de canne ou de sirop batterie, un doigt de rhum blanc et un zeste de citron vert.",
   origin: "Martinique"
 })
+rum3.remote_photo_url = 'http://img.facv.pmdstatic.net/fit/http.3A.2F.2Fdata.2Evodemotion.2Ecom.2F31828.2F31828.2Ejpg/1280x720/quality/80/recette-cocktail-le-ti-punch.jpg'
 rum3.user = User.first
 rum3.save!
 rum4 = Rum.new({
@@ -79,6 +82,7 @@ rum4 = Rum.new({
   description: "Cocktail à base de rhum, de citron vert et de cola.",
   origin: "Cuba"
 })
+rum4.remote_photo_url = 'https://www.thecocktailproject.com/sites/default/files/basic-brand-cuba-libre.jpg'
 rum4.user = User.first
 rum4.save!
 rum5 = Rum.new({
@@ -88,6 +92,7 @@ rum5 = Rum.new({
   description: "Cocktail composé de rhum blanc, de jus de lime et de sucre.",
   origin: "Brésil"
 })
+rum5.remote_photo_url = 'https://images.bigcartel.com/product_images/181595999/gastronomista_daiquiri.jpg?auto=format&fit=max&h=1000&w=1000'
 rum5.user = User.first
 rum5.save!
 
@@ -221,7 +226,7 @@ reviewtipunch3.save!
 
 reviewtipunch4 = Review.new({
   rating: 5,
-  content: "Je ne savais pas, que c'était ma cousine !"
+  content: "Je ne savais pas que c'était ma cousine"
 })
 reviewtipunch4.user = francky
 reviewtipunch4.rum = rum3
