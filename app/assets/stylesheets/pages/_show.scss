@@ -8,6 +8,13 @@
 }
 
 // FIRST BLOCK
+#update-btn {
+  width: 100px !important;
+  background-color: #2B82CD;
+  a {
+    color: white;
+  }
+}
 
   // first line
   .titlerum {
@@ -38,8 +45,11 @@
   }
 
   .rum-title-description{
+    width:300px;
     strong {
       color: #2B82CD;
+    }
+    p {
       margin-left: 15px;
     }
   }

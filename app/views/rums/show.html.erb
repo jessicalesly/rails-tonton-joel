@@ -28,6 +28,7 @@
                       <p><strong>Annecdote:</strong><%= @rum.anecdote %>
                       <p><strong>Price: </strong><%= @rum.price %> € </p>
                       <p><strong>Origine du rhum: </strong><%= @rum.origin %></p>
+                      <p><strong>Note du rhum: </strong><%= @average_rate %>/5</p>
                   </div>
                 </div>
             </div>
@@ -39,8 +40,8 @@
           <div class="purchase_block">
             <div class="design_purchase_block">
               <% if policy(@rum).edit? %>
-                <div class="vendor-module" >
-                  <%= link_to "Mettre à jour ce rhum", edit_rum_path %>
+                <div class="vendor-module" id= "update-btn">
+                  <%= link_to "Modifier", edit_rum_path %>
                 </div>
               <% elsif policy(@rum).edit? == false && @rum.availability%>
                 <div class="purchase-module" >
@@ -76,10 +77,10 @@
             <h3>Qui est ton Joël ?</h3>
           </div>
             <div class="descriptionjoel">
-                <% if current_user.photo.file.nil? %>
+                <% if @rum.user.photo.file.nil? %>
                   <img src="<%=image_path('pascal.jpg')%>" alt="" class="avatar legitimus">
                 <%else %>
-                  <%= cl_image_tag current_user.photo, height: 300, width: 400, crop: :fill, class:"avatar" %>
+                  <%= cl_image_tag @rum.user.photo, height: 300, width: 400, crop: :fill, class:"avatar" %>
                 <% end %>
             </div>
           <ul class="descriptionjoeltext">
@@ -117,10 +118,10 @@
               <ul>
                 <% @rum.reviews.each do |review| %>
                   <li>
-                    <% if current_user.photo.file.nil? %>
+                    <% if review.user.photo.file.nil? %>
                       <img src="<%=image_path('pascal.jpg', height: 50, width: 50)%>" alt="" class="avatar legitimus avatar-image">
                     <%else %>
-                      <%= cl_image_tag current_user.photo, height: 50, width: 50, crop: :fill %>
+                      <%= cl_image_tag review.user.photo, height: 50, width: 50, crop: :fill %>
                     <% end %>
                     <strong><%= review.user.username.capitalize %></strong>
                     <span class="stars-container">
