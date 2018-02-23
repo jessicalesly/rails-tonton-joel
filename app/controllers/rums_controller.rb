@@ -62,7 +62,12 @@ class RumsController < ApplicationController
     @order = Order.new
     authorize @rum
     @rums = Rum.where.not(latitude: nil, longitude: nil)
-
+    @average_rate = []
+    @rum.reviews.each do |review|
+      @average_rate << review.rating
+    end
+    @average_rate = @average_rate.inject{ |sum, el| sum + el }.to_f.fdiv(@average_rate.size)
+    raise
     @markers = [{
         lat: @rum.latitude,
         lng: @rum.longitude
