@@ -102,7 +102,7 @@ rum6 = Rum.new({
   description: "Cocktail à base de rhum et de lait de coco.",
   origin: "Martinique"
 })
-rum6.remote_photo_url = 'https://images.bigcartel.com/product_images/181595999/gastronomista_daiquiri.jpg?auto=format&fit=max&h=1000&w=1000'
+rum6.remote_photo_url = 'http://www.my-tahiti.com/wp-content/uploads/2015/04/punch-coco.jpg'
 rum6.user = francky
 rum6.save!
 rum7 = Rum.new({
@@ -112,7 +112,7 @@ rum7 = Rum.new({
   description: "Composé de coco, mais surtout d'Amour.",
   origin: "Guadeloupe"
 })
-rum7.remote_photo_url = 'https://images.bigcartel.com/product_images/181595999/gastronomista_daiquiri.jpg?auto=format&fit=max&h=1000&w=1000'
+rum7.remote_photo_url = 'https://images.unsplash.com/photo-1490324120634-0fa86c62d6c1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a2ca1d7b355475d8504bdb44b4b8c718&auto=format&fit=crop&w=1659&q=80'
 rum7.user = francky
 rum7.save!
 
@@ -164,7 +164,7 @@ order7 = Order.new({
   status: "en attente"
 })
 order7.user = francky
-order7.rum = rum1
+order7.rum = rum2
 order7.save!
 
 puts 'Creating reviews...'
