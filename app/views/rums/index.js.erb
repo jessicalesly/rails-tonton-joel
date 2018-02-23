@@ -1,0 +1,7 @@
+console.log("hello from remote true");
+
+function renderResult() {
+  const results_container = document.getElementById("results")
+  results_container.innerHTML = "<%= j render 'rums/results', rums: @rums %>"
+}
+renderResult()
