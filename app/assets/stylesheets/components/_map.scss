@@ -1,10 +1,9 @@
 #map {
   flex: 0 0 450px;
-  height: 100vh;
-  position: sticky !important;
+  height: 400px;
+  width: 300px;
+  position: absolute !important;
+  right: 0 !important;
   top: 0 !important;
-}
-.content {
-  display: flex;
 }
 

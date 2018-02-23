@@ -1,39 +1,138 @@
-.return_button {
-  background: white;
-  width: 100vh;
-  color:black;
-  padding-top: 10px;
-  &:hover {
-    opacity: 0.5;
-    padding: 10px;
+// Background
+.contentbackground {
+  background-image: url(fruitsback.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0 50px;
+  width: 100%;
+}
+
+// FIRST BLOCK
+
+  // first line
+  .titlerum {
+    color: #2B82CD;
+    font-weight: 900;
+    font-size: 24px;
+    margin: 0px;
+    margin-bottom: 10px;
   }
+
+
+  //  Image + Description + Map
+  .content {
+    background: white;
+    margin-top: 20px;
+    border-top: solid 3px #2B82CD;
+    border-radius: 0px 0px 10px 10px;
+    padding: 30px 100px;
+    height: 100%;
+    width:100%;
+    min-height: 379px;
+  }
+
+  .image_rum {
+    border-radius: 10px;
+    height: 750;
+    width: 500;
+  }
+
+  .rum-title-description{
+    strong {
+      color: #2B82CD;
+      margin-left: 15px;
+    }
+  }
+
+  .first_line {
+    height: 300px;
+    width: 100vh;
+    display: flex;
+    justify-content: space-between;
+  }
+
+// SECOND BLOCK
+
+  // Vendor information
+  .titlejoel h3 {
+    color: #2B82CD;
+    font-weight: 900;
+    font-size: 24px;
+    margin: 0px;
+    margin-bottom: 10px;
+  }
+
+  .descriptionjoeltext {
+    margin-top: 10px;
+    font-size: 18px;
+    margin-left: -30px;
+    strong {
+    color: #2B82CD;
+    margin-left: 15px;
+    }
+  }
+
+  .descriptionjoel img {
+    height: 200px;
+    width: 200px;
+  }
+
+  // Purchase block
+
+  .purchase-module {
+    padding: 5px;
+    width: 20vw;
+    align-items: start;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: right;
+    margin-left: 30px;
+    text-align: center;
+    input {
+      text-align: left;
+    }
+  }
+
+  .design_purchase_block {
+    margin-top: 10px;
+    position: absolute !important;
+    right: 0 !important;
+    top: 0 !important;
+  }
+
+
+
+
+// THIRD BLOCK
+
+  //  Review
+
+.avatar-image {
+  height: 50px;
+  width: 50px;
 }
 
-.firstwrapper {
-  background: white;
-  margin-top: 0;
+.colorstar {
+  color: orange;
+  width: 10px;
+  margin: 4px;
+  margin-right: 2px;
 }
 
-.image_rum {
-  border-radius: 10px;
-  height: 750;
-  width: 500;
+.text-review {
+  padding: 4px;
 }
 
-
-.first_line {
-  width: 100vh;
-  display: flex;
-  justify-content: space-between;
-}
-
-
-.design_purchase_block {
-  display: right;
-  margin-left: 20px;
-}
-
-.wrapper_review {
-  background: white;
-  padding: 20px;
+.reviewcontent{
+  // display:flex;
+  // align-items: center;
+  // justify-content: space-between;
+  padding: 10px 20px;
+  margin-top: 10px;
+  li {
+    margin-bottom: 10px;
+  }
+  .stars-container {
+    margin-right: 15px;
+  }
 }
