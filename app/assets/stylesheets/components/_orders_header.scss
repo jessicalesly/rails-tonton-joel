@@ -4,7 +4,7 @@
 }
 
 .profile-header-wrapper {
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), asset-url('beach.jpeg');
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), asset-url('vertical_beach_night.jpeg');
   background-size: cover;
 }
 
@@ -20,6 +20,7 @@
   }
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .profile-header-infos {
@@ -31,13 +32,13 @@
   // background-color: #bbcce2;
   // background-color: #ededed;
   // background-color: #ECFAFB;
-  padding-top: 30px;
-  padding-bottom: 50px;
+  // padding-top: 30px;
+  // padding-bottom: 50px;
 }
 
 .wrapper-sales {
   // background-color: #bbcce2;
-  background-color: #F4F4F4;
-  padding-top: 30px;
-  padding-bottom: 50px;
+  // background-color: #F4F4F4;
+  // padding-top: 30px;
+  // padding-bottom: 50px;
 }

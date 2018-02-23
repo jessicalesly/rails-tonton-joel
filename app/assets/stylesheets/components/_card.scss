@@ -140,6 +140,11 @@
 .card-order-nothing {
   display: flex;
   justify-content: center;
+  margin: 200px 0px;
+  color: white;
+  a {
+    color: white;
+  }
 }
 
 // .card-message-order {
@@ -149,7 +154,7 @@
 
 .card-order-index {
   // position: relative;
-  border: 1px solid black;
+  // border: 1px solid black;
   border-radius: 4px;
   margin-bottom: 20px;
   padding: 15px;
@@ -206,4 +211,8 @@
   // position: absolute;
   // bottom: 10px;
   // right: 5px;
+}
+
+#btn-accepter {
+  margin-bottom: 8px;
 }
