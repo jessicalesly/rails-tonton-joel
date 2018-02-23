@@ -67,7 +67,6 @@ class RumsController < ApplicationController
       @average_rate << review.rating
     end
     @average_rate = @average_rate.inject{ |sum, el| sum + el }.to_f.fdiv(@average_rate.size)
-    raise
     @markers = [{
         lat: @rum.latitude,
         lng: @rum.longitude
