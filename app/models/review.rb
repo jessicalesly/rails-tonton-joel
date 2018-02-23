@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-  belongs_to :rum, dependent: :destroy
+  belongs_to :rum
   belongs_to :user
   validates :rum, presence: true
   validates :content, presence: true
