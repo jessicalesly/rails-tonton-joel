@@ -3,25 +3,25 @@
     <div class="banner-content-new">
       <h1>Ajoute un rhum</h1>
       <%= simple_form_for [@rum] do |f| %>
-        <br>
+        <!-- <br> -->
         <%= f.input :name, label: "Nom du cocktail", class:"form-group", placeholder: "Nom du cocktail" %>
-        <br>
+        <!-- <br> -->
         <%= f.input :volume, label: "Volume", class:"form-group", placeholder: "2L, 3 bouteilles, etc." %>
-        <br>
+        <!-- <br> -->
         <%= f.input :price, label: "Prix en euros", class:"form-group", placeholder: "5, 10, etc." %>
-        <br>
+        <!-- <br> -->
         <%= f.input :description, label: "Description", class:"form-group", placeholder: "Coco, épices, etc." %>
-        <br>
+        <!-- <br> -->
          <%= f.input :origin, include_blank: false, class:"form-group", as: :select, collection: ["Guadeloupe", "Martinique","Cuba","Brésil"] %>
-        <br>
+        <!-- <br> -->
         <%= f.input :anecdote, label: "Annecdote", class:"form-group", placeholder: "Waconte-nous une histoire mon petit Joël" %>
-        <br>
+        <!-- <br> -->
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
-        <br>
+        <!-- <br> -->
         <%= f.submit "C'est pawti", class: "btn btn-primary stylebutton " %>
       <% end %>
-      <br>
+      <!-- <br> -->
       <%= link_to "Revenir à la liste des rhums", rums_path, class: "link_home"%>
       <!-- <a href="" class="btn-yours">Discover</a> -->
     </div>

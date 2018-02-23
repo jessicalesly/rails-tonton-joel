@@ -140,8 +140,81 @@
 .card-order-nothing {
   display: flex;
   justify-content: center;
+  margin: 200px 0px;
+  color: white;
+  a {
+    color: white;
+  }
 }
 
 // .card-message-order {
 //   position: absolute;
 // }
+
+
+.card-order-index {
+  // position: relative;
+  // border: 1px solid black;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 15px;
+  // background-color: #ECFAFB;
+  height:230px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-order-coconut {
+  // position: relative;
+  // left: 5px;
+  width: 115px;
+  height: 200px;
+  background-size: 80%;
+  flex: 0 0 20%;
+}
+
+.card-order-index-desc {
+  // position: relative;
+  // left: 150px;
+  width: 300px;
+  flex: 1 0 auto;
+  margin-left: 20px;
+}
+
+.green-status {
+  color: green;
+}
+
+.red-status {
+  color: red;
+}
+
+.card-order-index-to-do {
+  flex: 0 0 20%;
+  // border: 0.2px solid #cccccc;
+  text-align: center;
+}
+
+.card-order-index-status {
+  // position: absolute;
+  // top: 5px;
+  // right: 5px;
+}
+
+.card-order-index-cancel {
+  // position: absolute;
+  // top: 50px;
+  // right: 5px;
+}
+
+.card-order-index-pay {
+  // position: absolute;
+  // bottom: 10px;
+  // right: 5px;
+}
+
+#btn-accepter {
+  margin-bottom: 8px;
+}
