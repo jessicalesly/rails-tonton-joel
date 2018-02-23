@@ -16,7 +16,10 @@
 
 .tab.active {
   color: white;
-  background-color: #bbcce2;
+  // background-color: #bbcce2;
+  background-color: transparent;
+  border: 1px solid white;
+  margin: 5px;
 }
 
 .tab {

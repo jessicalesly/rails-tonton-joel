@@ -152,6 +152,9 @@
   border: 1px solid black;
   border-radius: 4px;
   margin-bottom: 20px;
+  padding: 15px;
+  // background-color: #ECFAFB;
+  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -160,13 +163,31 @@
 .card-order-coconut {
   // position: relative;
   // left: 5px;
-  width: 100px;
-  height: 100px;
+  width: 115px;
+  height: 200px;
+  background-size: 80%;
+  flex: 0 0 20%;
 }
 
 .card-order-index-desc {
   // position: relative;
   // left: 150px;
+  flex: 1 0 auto;
+  margin-left: 20px;
+}
+
+.green-status {
+  color: green;
+}
+
+.red-status {
+  color: red;
+}
+
+.card-order-index-to-do {
+  flex: 0 0 20%;
+  // border: 0.2px solid #cccccc;
+  text-align: center;
 }
 
 .card-order-index-status {
