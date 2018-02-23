@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    sleep 2
+    sleep 3
     @order = Order.new(order_params)
     authorize @order
     @order.rum = Rum.find(params[:rum_id])
