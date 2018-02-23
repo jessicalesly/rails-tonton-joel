@@ -51,7 +51,9 @@
               <div class="card-order-index">
                 <img src="<%=image_path('mojito_order.svg')%>" class="card-order-coconut">
                 <div class="card-order-index-desc">
-                  <h4><%= order.rum.name.capitalize %></h4>
+                  <h4>
+                    <%= link_to order.rum.name.capitalize, rum_path(order.rum) %>
+                  </h4>
                   <p>Description: <%= order.rum.description%></p>
                   <p>Ton Joël: <%= order.rum.user.username.capitalize %></p>
                   <p>Volume: <%= order.rum.volume %></p>
@@ -105,7 +107,9 @@
             <div class="card-order-index">
               <img src="<%=image_path('teq.svg')%>" class="card-order-coconut">
               <div class="card-order-index-desc">
-                <h4><%= rum.name.capitalize %></h4>
+                <h4>
+                  <%= link_to rum.name.capitalize, rum_path(rum) %>
+                </h4>
                 <p>Description: <%= rum.description%></p>
                 <p>Volume: <%= rum.volume %></p>
                 <p>Prix unitaire: <%= rum.price %>€</p>
@@ -145,7 +149,9 @@
               <div class="card-order-index">
                 <img src="<%=image_path('mai.svg')%>" class="card-order-coconut">
                 <div class="card-order-index-desc">
-                  <h4><%= order.rum.name.capitalize %></h4>
+                  <h4>
+                    <%= link_to order.rum.name.capitalize, rum_path(order.rum) %>
+                  </h4>
                   <p>Description: <%= order.rum.description%></p>
                   <p>Ton acheteur: <%= order.user.username.capitalize %></p>
                   <p>Volume: <%= order.rum.volume %></p>
