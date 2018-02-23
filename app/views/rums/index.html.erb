@@ -37,14 +37,14 @@
   <h3 class="wrappercardstitle" id= "ancrelist">Quelques douceurs</h3>
   <div class="container">
     <div class="row">
-      <div class="search_bar">
+      <div class="search_bar text-center">
         <%= form_tag(rums_path, method: :get, remote: true) do %>
           <%= text_field_tag :query,
               params[:query],
               class: "form-control",
               placeholder: "Trouver un rhum"
           %>
-          <input type="submit" value="Chewché un rhum" class="btn btn-primary">
+          <input type="submit" value="Chewche un rhum" class="btn btn-primary">
         <% end %>
       </div>
 
