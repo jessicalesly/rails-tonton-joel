@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.last)
 
-user1 = User.new(username: "ClemSimons", email: "clement@gmail.com", password: "123456")
+user1 = User.new(username: "ClemSimons", email: "cleme@gmail.com", password: "123456")
 user1.save!
 
-user2 = User.new(username: "jessicalesly", email: "jessica@gmail.com", password: "123456")
+user2 = User.new(username: "jessicalesly", email: "jess@gmail.com", password: "123456")
 user2.save!
 
 rum1 = Rum.new(name: "Le planteur", price: 10, volume: "1 bouteille", origin: "Antilles")
