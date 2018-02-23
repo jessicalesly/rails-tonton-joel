@@ -53,7 +53,7 @@ rum1 = Rum.new({
   origin: "Guadeloupe"
 })
 rum1.remote_photo_url = 'https://www.atelier-cocktail.com/uploads/cocktail-banner/900X471/20150610165340740781.png'
-rum1.user = User.first
+rum1.user = clément
 rum1.save!
 rum2 = Rum.new({
   name: "Le punch gingembre",
@@ -63,7 +63,7 @@ rum2 = Rum.new({
   origin: "Martinique"
 })
 rum2.remote_photo_url = 'https://boiremixologie.com/files/medias/_imageCarrousel/cocktail-punch-gingembre.jpg'
-rum2.user = User.first
+rum2.user = clément
 rum2.save!
 rum3 = Rum.new({
   name: "Le ti'punch",
@@ -73,7 +73,7 @@ rum3 = Rum.new({
   origin: "Martinique"
 })
 rum3.remote_photo_url = 'http://img.facv.pmdstatic.net/fit/http.3A.2F.2Fdata.2Evodemotion.2Ecom.2F31828.2F31828.2Ejpg/1280x720/quality/80/recette-cocktail-le-ti-punch.jpg'
-rum3.user = User.first
+rum3.user = clément
 rum3.save!
 rum4 = Rum.new({
   name: "Le cuba libre",
@@ -83,7 +83,7 @@ rum4 = Rum.new({
   origin: "Cuba"
 })
 rum4.remote_photo_url = 'https://www.thecocktailproject.com/sites/default/files/basic-brand-cuba-libre.jpg'
-rum4.user = User.first
+rum4.user = francky
 rum4.save!
 rum5 = Rum.new({
   name: "Le daiquiri",
@@ -93,45 +93,79 @@ rum5 = Rum.new({
   origin: "Brésil"
 })
 rum5.remote_photo_url = 'https://images.bigcartel.com/product_images/181595999/gastronomista_daiquiri.jpg?auto=format&fit=max&h=1000&w=1000'
-rum5.user = User.first
+rum5.user = francky
 rum5.save!
+rum6 = Rum.new({
+  name: "Le coco bongo",
+  price: 60,
+  volume: "6 bouteilles",
+  description: "Cocktail à base de rhum et de lait de coco.",
+  origin: "Martinique"
+})
+rum6.remote_photo_url = 'https://images.bigcartel.com/product_images/181595999/gastronomista_daiquiri.jpg?auto=format&fit=max&h=1000&w=1000'
+rum6.user = francky
+rum6.save!
+rum7 = Rum.new({
+  name: "Petite caresse coco",
+  price: 70,
+  volume: "7 bouteilles",
+  description: "Composé de coco, mais surtout d'Amour.",
+  origin: "Guadeloupe"
+})
+rum7.remote_photo_url = 'https://images.bigcartel.com/product_images/181595999/gastronomista_daiquiri.jpg?auto=format&fit=max&h=1000&w=1000'
+rum7.user = francky
+rum7.save!
 
 puts 'Creating orders...'
 order1 = Order.new({
   quantity: 1,
   status: "en attente"
 })
-order1.user = User.last
+order1.user = jessica
 order1.rum = rum1
 order1.save!
 order2 = Order.new({
   quantity: 2,
   status: "accepté"
 })
-order2.user = User.last
+order2.user = jessica
 order2.rum = rum2
 order2.save!
 order3 = Order.new({
   quantity: 3,
   status: "annulé"
 })
-order3.user = User.last
+order3.user = jessica
 order3.rum = rum3
 order3.save!
 order4 = Order.new({
   quantity: 4,
   status: "refusé"
 })
-order4.user = User.last
+order4.user = jessica
 order4.rum = rum4
 order4.save!
 order5 = Order.new({
   quantity: 5,
   status: "finalisé"
 })
-order5.user = User.last
+order5.user = jessica
 order5.rum = rum5
 order5.save!
+order6 = Order.new({
+  quantity: 6,
+  status: "en attente"
+})
+order6.user = francky
+order6.rum = rum1
+order6.save!
+order7 = Order.new({
+  quantity: 7,
+  status: "en attente"
+})
+order7.user = francky
+order7.rum = rum1
+order7.save!
 
 puts 'Creating reviews...'
 reviewplanteur1 = Review.new({
@@ -264,36 +298,100 @@ reviewcubalibre4.user = francky
 reviewcubalibre4.rum = rum4
 reviewcubalibre4.save!
 
-reviewcubalibre1 = Review.new({
+reviewdaiquiri1 = Review.new({
   rating: 4,
   content: "Achète c'est du bon!"
 })
-reviewcubalibre1.user = jeanmich
-reviewcubalibre1.rum = rum5
-reviewcubalibre1.save!
+reviewdaiquiri1.user = jeanmich
+reviewdaiquiri1.rum = rum5
+reviewdaiquiri1.save!
 
-reviewcubalibre2 = Review.new({
+reviewdaiquiri2 = Review.new({
   rating: 1,
   content: "Nul à chier"
 })
-reviewcubalibre2.user = eveangeli
-reviewcubalibre2.rum = rum5
-reviewcubalibre2.save!
+reviewdaiquiri2.user = eveangeli
+reviewdaiquiri2.rum = rum5
+reviewdaiquiri2.save!
 
-reviewcubalibre3 = Review.new({
+reviewdaiquiri3 = Review.new({
   rating: 4,
   content: "C'est si doux!"
 })
-reviewcubalibre3.user = fruitdelapassion
-reviewcubalibre3.rum = rum5
-reviewcubalibre3.save!
+reviewdaiquiri3.user = fruitdelapassion
+reviewdaiquiri3.rum = rum5
+reviewdaiquiri3.save!
 
-reviewcubalibre4 = Review.new({
+reviewdaiquiri4 = Review.new({
   rating: 5,
   content: "J'aime ton style"
 })
-reviewcubalibre4.user = francky
-reviewcubalibre4.rum = rum5
-reviewcubalibre4.save!
+reviewdaiquiri4.user = francky
+reviewdaiquiri4.rum = rum5
+reviewdaiquiri4.save!
+
+reviewcocobongo1 = Review.new({
+  rating: 4,
+  content: "Putaing c'est beau"
+})
+reviewcocobongo1.user = jeanmich
+reviewcocobongo1.rum = rum6
+reviewcocobongo1.save!
+
+reviewcocobongo2 = Review.new({
+  rating: 1,
+  content: "Jamais autant gerbé de ma vie"
+})
+reviewcocobongo2.user = eveangeli
+reviewcocobongo2.rum = rum6
+reviewcocobongo2.save!
+
+reviewcocobongo3 = Review.new({
+  rating: 4,
+  content: "easy"
+})
+reviewcocobongo3.user = fruitdelapassion
+reviewcocobongo3.rum = rum6
+reviewcocobongo3.save!
+
+reviewcocobongo4 = Review.new({
+  rating: 5,
+  content: "envoi du gras"
+})
+reviewcocobongo4.user = francky
+reviewcocobongo4.rum = rum6
+reviewcocobongo4.save!
+
+reviewcoco1 = Review.new({
+  rating: 4,
+  content: "du paté"
+})
+reviewcoco1.user = jeanmich
+reviewcoco1.rum = rum7
+reviewcoco1.save!
+
+reviewcoco2 = Review.new({
+  rating: 1,
+  content: "je n'achèterai plus jamais sur votre site"
+})
+reviewcoco2.user = eveangeli
+reviewcoco2.rum = rum7
+reviewcoco2.save!
+
+reviewcoco3 = Review.new({
+  rating: 4,
+  content: "je ne vais plus à cawfouw, mais sur votre site"
+})
+reviewcoco3.user = fruitdelapassion
+reviewcoco3.rum = rum7
+reviewcoco3.save!
+
+reviewcoco4 = Review.new({
+  rating: 5,
+  content: "M'a permis d'attraper Madame"
+})
+reviewcoco4.user = francky
+reviewcoco4.rum = rum7
+reviewcoco4.save!
 
 puts 'Finished!'
